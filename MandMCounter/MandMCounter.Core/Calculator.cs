@@ -6,7 +6,7 @@ namespace MandMCounter.Core
 {
     public class Calculator
     {
-        public float CalculateMandMs(string unit, float quanity)
+        public float CountMandMs(string unit, float quanity)
         {
             if (string.IsNullOrEmpty(unit))
             {
@@ -18,7 +18,7 @@ namespace MandMCounter.Core
             return numberOfMandMs;
         }
 
-        public float CalculateMandMs(string unit, float height, float width, float length)
+        public float CountMandMs(string unit, float height, float width, float length)
         {
             if (string.IsNullOrEmpty(unit))
             {
@@ -30,23 +30,26 @@ namespace MandMCounter.Core
             return numberOfMandMs;
         }
 
-        private float GetCubicCm(string unit, float height, float width, float length)
+        public float CountMandMs(string unit, float height, float radius)
         {
-            switch (unit.ToLower())
+            if (string.IsNullOrEmpty(unit))
             {
-                case "cm":
-                    return height * width * length;
-                case "inch":
-                    return Constants.USCubicInchesToCubicCM * height * width * length;
-                default:
-                    return 0f;
+                throw new Exception("No unit input. Please pass a unit, such as cup, tablespoon, teaspoon, etc");
             }
+
+            //Here is the meat of the math
+            float numberOfMandMs = GetCubicCm(unit, height, radius) * Constants.MandMSDensityPercent;
+            return numberOfMandMs;
         }
 
         private float GetCubicCm(string unit, float quantity)
         {
             switch (unit.ToLower())
             {
+                case "gallon":
+                    return Constants.USGallonToCubicCM * quantity;
+                case "quart":
+                    return Constants.USQuartToCubicCm * quantity;
                 case "cup":
                     return Constants.USCupToCubicCm * quantity;
                 case "tablespoon":
@@ -54,7 +57,39 @@ namespace MandMCounter.Core
                 case "teaspoon":
                     return Constants.USTeaSpoonToCubicCm * quantity;
                 default:
-                    return 0f;
+                    throw new Exception("Unknown unit when calculating volume of unit: " + unit);
+            }
+        }
+
+        private float GetCubicCm(string unit, float height, float width, float length)
+        {
+            float baseCalculation = height * width * length;
+
+            switch (unit.ToLower())
+            {
+                case "cm":
+                    return baseCalculation;
+                case "inch":
+                    return Constants.USCubicInchesToCubicCM * baseCalculation;
+                default:
+                    throw new Exception("Unknown unit when calculating volume of rectangle: " + unit);
+            }
+        }
+
+        private float GetCubicCm(string unit, float height, float radius)
+        {
+
+            // radius ^ 2 * (pi) * height
+            float baseCalculation = (float)(Convert.ToDouble(radius) * Convert.ToDouble(radius) * Math.PI * Convert.ToDouble(height));
+
+            switch (unit.ToLower())
+            {
+                case "cm":
+                    return baseCalculation;
+                case "inch":
+                    return Constants.USCubicInchesToCubicCM * baseCalculation;
+                default:
+                    throw new Exception("Unknown unit when calculating volume of cylinder: " + unit);
             }
         }
 
