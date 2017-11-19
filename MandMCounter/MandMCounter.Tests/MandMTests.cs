@@ -1,8 +1,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MandMCounter.Core;
+using System;
 
 namespace MandMCounter.Tests
 {
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     [TestClass]
     public class MandMTests
     {
@@ -99,6 +101,26 @@ namespace MandMCounter.Tests
             Assert.IsTrue(System.Math.Round(result, 0) == 3f);
         }
 
+        [TestMethod]
+        public void CountMandMsInANullUnitTest()
+        {
+            try
+            {
+                //Arrange
+                string unit = null;
+                float quantity = 1;
+
+                //Act
+                Calculator calc = new Calculator();
+                float result = calc.CountMandMs(unit, quantity);
+            }
+            catch (Exception ex)
+            {
+                //Assert
+                Assert.IsTrue(ex != null);
+            }
+        }
+
         #endregion
 
         #region " Testing volume in a rectangle" 
@@ -137,12 +159,35 @@ namespace MandMCounter.Tests
             Assert.IsTrue(System.Math.Round(result, 0) == 11f);
         }
 
+
+        [TestMethod]
+        public void CountMandMsInA1CubicNullUnitTest()
+        {
+            try
+            {
+                //Arrange
+                string unit = null;
+                float height = 1;
+                float width = 1;
+                float length = 1;
+
+                //Act
+                Calculator calc = new Calculator();
+                float result = calc.CountMandMs(unit, height, width, length);
+            }
+            catch (Exception ex)
+            {
+                //Assert
+                Assert.IsTrue(ex != null);
+            }
+        }
+
         #endregion
 
         #region " Testing volume in a cylinder" 
 
         [TestMethod]
-        public void CountMandMsInACylinderTest()
+        public void CountMandMsInACylinderWithCMTest()
         {
             //Arrange
             string unit = "cm";
@@ -155,6 +200,43 @@ namespace MandMCounter.Tests
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 534f);
+        }
+
+        [TestMethod]
+        public void CountMandMsInACylinderWithInchTest()
+        {
+            //Arrange
+            string unit = "inch";
+            float height = 4;
+            float radius = 2;
+
+            //Act
+            Calculator calc = new Calculator();
+            float result = calc.CountMandMs(unit, height, radius);
+
+            //Assert
+            Assert.IsTrue(System.Math.Round(result, 0) == 560f);
+        }
+
+        [TestMethod]
+        public void CountMandMsInACylinderWithNullUnitTest()
+        {
+            try
+            {
+                //Arrange
+                string unit = null;
+                float height = 10;
+                float radius = 5;
+
+                //Act
+                Calculator calc = new Calculator();
+                float result = calc.CountMandMs(unit, height, radius);
+            }
+            catch (Exception ex)
+            {
+                //Assert
+                Assert.IsTrue(ex != null);
+            }
         }
 
         #endregion
