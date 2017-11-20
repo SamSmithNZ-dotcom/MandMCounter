@@ -6,12 +6,12 @@ namespace MandMCounter.Tests
 {
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     [TestClass]
-    public class MandMTests
+    public class SkittleTests
     {
         #region "Testing units"
 
         [TestMethod]
-        public void CountMandMsInAUSGallonTest()
+        public void CountSkittlesInAUSGallonTest()
         {
             //Arrange
             string unit = "Gallon";
@@ -19,14 +19,14 @@ namespace MandMCounter.Tests
 
             //Act
             Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = calc.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 4047f);
+            Assert.IsTrue(System.Math.Round(result, 0) == 3393f);
         }
 
         [TestMethod]
-        public void CountMandMsInAUSQuartTest()
+        public void CountSkittlesInAUSQuartTest()
         {
             //Arrange
             string unit = "Quart";
@@ -34,14 +34,14 @@ namespace MandMCounter.Tests
 
             //Act
             Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = calc.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 1012f);
+            Assert.IsTrue(System.Math.Round(result, 0) == 848f);
         }
 
         [TestMethod]
-        public void CountMandMsInAUSCupTest()
+        public void CountSkittlesInAUSCupTest()
         {
             //Arrange
             string unit = "Cup";
@@ -49,15 +49,15 @@ namespace MandMCounter.Tests
 
             //Act
             Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = calc.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 253f);
+            Assert.IsTrue(System.Math.Round(result, 0) == 212f);
         }
 
 
         [TestMethod]
-        public void CountMandMsInAUSQuarterCupTest()
+        public void CountSkittlesInAUSQuarterCupTest()
         {
             //Arrange
             string unit = "Cup";
@@ -65,14 +65,14 @@ namespace MandMCounter.Tests
 
             //Act
             Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = calc.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 63f);
+            Assert.IsTrue(System.Math.Round(result, 0) == 53f);
         }
 
         [TestMethod]
-        public void CountMandMsInAUSTableSpoonTest()
+        public void CountSkittlesInAUSTableSpoonTest()
         {
             //Arrange
             string unit = "Tablespoon";
@@ -80,14 +80,14 @@ namespace MandMCounter.Tests
 
             //Act
             Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = calc.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 16f);
+            Assert.IsTrue(System.Math.Round(result, 0) == 13f);
         }
 
         [TestMethod]
-        public void CountMandMsInAUSTeaSpoonTest()
+        public void CountSkittlesInAUSTeaSpoonTest()
         {
             //Arrange
             string unit = "Teaspoon";
@@ -95,14 +95,14 @@ namespace MandMCounter.Tests
 
             //Act
             Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = calc.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 5f);
+            Assert.IsTrue(System.Math.Round(result, 0) == 4f);
         }
 
         [TestMethod]
-        public void CountMandMsInANullUnitTest()
+        public void CountSkittlesInANullUnitTest()
         {
             try
             {
@@ -112,7 +112,7 @@ namespace MandMCounter.Tests
 
                 //Act
                 Calculator calc = new Calculator();
-                float result = calc.CountMandMs(unit, quantity);
+                float result = calc.CountSkittles(unit, quantity);
             }
             catch (Exception ex)
             {
@@ -122,7 +122,7 @@ namespace MandMCounter.Tests
         }
 
         [TestMethod]
-        public void CountMandMsInA1LitreTest()
+        public void CountSkittlesInA1LitreTest()
         {
             //Arrange
             string unit = "Liter";
@@ -130,10 +130,10 @@ namespace MandMCounter.Tests
 
             //Act
             Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = calc.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 1069f);
+            Assert.IsTrue(System.Math.Round(result, 0) == 896f);
         }
 
         #endregion
@@ -141,7 +141,7 @@ namespace MandMCounter.Tests
         #region " Testing volume in a rectangle" 
 
         [TestMethod]
-        public void CountMandMsInA1CubicCMTest()
+        public void CountSkittlesInA1CubicCMTest()
         {
             //Arrange
             string unit = "cm";
@@ -151,31 +151,14 @@ namespace MandMCounter.Tests
 
             //Act
             Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, width, length);
+            float result = calc.CountSkittles(unit, height, width, length);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 1069f);
+            Assert.IsTrue(System.Math.Round(result, 0) == 896f);
         }
 
         [TestMethod]
-        public void CountMandMsInA1CubicMTest()
-        {
-            //Arrange
-            string unit = "m";
-            float height = 1;
-            float width = 1;
-            float length = 1;
-
-            //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, width, length);
-
-            //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 1069f);
-        }
-
-        [TestMethod]
-        public void CountMandMsInA1CubicInchTest()
+        public void CountSkittlesInA1CubicInchTest()
         {
             //Arrange
             string unit = "inch";
@@ -185,32 +168,15 @@ namespace MandMCounter.Tests
 
             //Act
             Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, width, length);
+            float result = calc.CountSkittles(unit, height, width, length);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 18f);
-        }
-
-        [TestMethod]
-        public void CountMandMsInA1CubicFeetTest()
-        {
-            //Arrange
-            string unit = "feet";
-            float height = 1;
-            float width = 1;
-            float length = 1;
-
-            //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, width, length);
-
-            //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 30276f);
+            Assert.IsTrue(System.Math.Round(result, 0) == 15f);
         }
 
 
         [TestMethod]
-        public void CountMandMsInA1CubicNullUnitTest()
+        public void CountSkittlesInA1CubicNullUnitTest()
         {
             try
             {
@@ -222,7 +188,7 @@ namespace MandMCounter.Tests
 
                 //Act
                 Calculator calc = new Calculator();
-                float result = calc.CountMandMs(unit, height, width, length);
+                float result = calc.CountSkittles(unit, height, width, length);
             }
             catch (Exception ex)
             {
@@ -236,7 +202,7 @@ namespace MandMCounter.Tests
         #region " Testing volume in a cylinder" 
 
         [TestMethod]
-        public void CountMandMsInACylinderWithCMTest()
+        public void CountSkittlesInACylinderWithCMTest()
         {
             //Arrange
             string unit = "cm";
@@ -245,30 +211,14 @@ namespace MandMCounter.Tests
 
             //Act
             Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, radius);
+            float result = calc.CountSkittles(unit, height, radius);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 840f);
+            Assert.IsTrue(System.Math.Round(result, 0) == 704f);
         }
 
         [TestMethod]
-        public void CountMandMsInACylinderWithMTest()
-        {
-            //Arrange
-            string unit = "m";
-            float height = 1;
-            float radius = 1;
-
-            //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, radius);
-
-            //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 3359f);
-        }
-
-        [TestMethod]
-        public void CountMandMsInACylinderWithInchTest()
+        public void CountSkittlesInACylinderWithInchTest()
         {
             //Arrange
             string unit = "inch";
@@ -277,30 +227,14 @@ namespace MandMCounter.Tests
 
             //Act
             Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, radius);
+            float result = calc.CountSkittles(unit, height, radius);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 881f);
+            Assert.IsTrue(System.Math.Round(result, 0) == 738f);
         }
 
         [TestMethod]
-        public void CountMandMsInACylinderWithFeetTest()
-        {
-            //Arrange
-            string unit = "feet";
-            float height = 1;
-            float radius = 1;
-
-            //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, radius);
-
-            //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 95115f);
-        }
-
-        [TestMethod]
-        public void CountMandMsInACylinderWithNullUnitTest()
+        public void CountSkittlesInACylinderWithNullUnitTest()
         {
             try
             {
@@ -311,7 +245,7 @@ namespace MandMCounter.Tests
 
                 //Act
                 Calculator calc = new Calculator();
-                float result = calc.CountMandMs(unit, height, radius);
+                float result = calc.CountSkittles(unit, height, radius);
             }
             catch (Exception ex)
             {

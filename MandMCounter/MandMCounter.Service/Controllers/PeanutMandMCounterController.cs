@@ -9,8 +9,8 @@ using MandMCounter.Core;
 namespace MandMCounter.Service.Controllers
 {
     [Produces("application/json")]
-    [Route("api/MandMCounter")]
-    public class MandMCounterController : Controller
+    [Route("api/PeanutMandMCounter")]
+    public class PeanutMandMCounterController : Controller
     {
         /// <summary>
         /// To count the number of M&Ms in a container based on unit volume (Quart/Gallon/Liter, etc)
@@ -21,7 +21,7 @@ namespace MandMCounter.Service.Controllers
         public float GetData(string unit, float quantity)
         {
             Calculator calc = new Calculator();
-            return calc.CountMandMs(unit, quantity);
+            return calc.CountPeanutMandMs(unit, quantity);
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace MandMCounter.Service.Controllers
         public float GetData(string unit, float height, float width, float length)
         {
             Calculator calc = new Calculator();
-            return calc.CountMandMs(unit, height, width, length);
+            return calc.CountPeanutMandMs(unit, height, width, length);
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace MandMCounter.Service.Controllers
         public float GetData(string unit, float height, float radius)
         {
             Calculator calc = new Calculator();
-            return calc.CountMandMs(unit, height, radius);
+            return calc.CountPeanutMandMs(unit, height, radius);
         }
     }
 }
