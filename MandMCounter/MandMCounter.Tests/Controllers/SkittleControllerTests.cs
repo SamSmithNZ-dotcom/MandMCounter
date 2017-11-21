@@ -19,7 +19,7 @@ namespace MandMCounter.Tests.Controllers
 
             //Act
             SkittleCounterController controller = new SkittleCounterController();
-            float result = controller.GetData(unit, quantity);
+            float result = controller.GetDataForUnit(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 212f);
@@ -40,7 +40,7 @@ namespace MandMCounter.Tests.Controllers
 
             //Act
             SkittleCounterController controller = new SkittleCounterController();
-            float result = controller.GetData(unit, height, width, length);
+            float result = controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 896f);
@@ -59,9 +59,8 @@ namespace MandMCounter.Tests.Controllers
             float radius = 5;
 
             //Act
-
             SkittleCounterController controller = new SkittleCounterController();
-            float result = controller.GetData(unit, height, radius);
+            float result = controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 704f);
