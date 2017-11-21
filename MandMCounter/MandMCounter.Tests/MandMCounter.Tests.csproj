@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MandMCounter.Core\MandMCounter.Core.csproj" />
+    <ProjectReference Include="..\MandMCounter.Service\MandMCounter.Service.csproj" />
   </ItemGroup>
 
 </Project>

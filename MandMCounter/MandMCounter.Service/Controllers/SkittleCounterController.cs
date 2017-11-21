@@ -18,7 +18,7 @@ namespace MandMCounter.Service.Controllers
         /// <param name="unit">String Quart/Gallon/Liter</param>
         /// <param name="quanity">Any float number</param>
         /// <returns>Skittle count, as an unrounded float</returns>
-        public float GetData(string unit, float quantity)
+        public float GetDataForVolume(string unit, float quantity)
         {
             Calculator calc = new Calculator();
             return calc.CountSkittles(unit, quantity);
@@ -32,7 +32,7 @@ namespace MandMCounter.Service.Controllers
         /// <param name="width">the width of the rectangle</param>
         /// <param name="length">the length of the rectangle</param>
         /// <returns>Skittle count, as an unrounded float</returns>
-        public float GetData(string unit, float height, float width, float length)
+        public float GetDataForRectangle(string unit, float height, float width, float length)
         {
             Calculator calc = new Calculator();
             return calc.CountSkittles(unit, height, width, length);
@@ -45,7 +45,7 @@ namespace MandMCounter.Service.Controllers
         /// <param name="height">the height of the cylinder</param>
         /// <param name="radius">the radius of the container (half of the diameter)</param>
         /// <returns>Skittle count, as an unrounded float</returns>
-        public float GetData(string unit, float height, float radius)
+        public float GetDataForCylinder(string unit, float height, float radius)
         {
             Calculator calc = new Calculator();
             return calc.CountSkittles(unit, height, radius);

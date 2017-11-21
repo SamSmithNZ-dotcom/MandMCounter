@@ -18,7 +18,8 @@ namespace MandMCounter.Service.Controllers
         /// <param name="unit">String Quart/Gallon/Liter</param>
         /// <param name="quanity">Any float number</param>
         /// <returns>M&M count, as an unrounded float</returns>
-        public float GetData(string unit, float quantity)
+        [HttpGet("{unit, quanity}")]
+        public float GetDataForVolume(string unit, float quantity)
         {
             Calculator calc = new Calculator();
             return calc.CountMandMs(unit, quantity);
@@ -32,7 +33,8 @@ namespace MandMCounter.Service.Controllers
         /// <param name="width">the width of the rectangle</param>
         /// <param name="length">the length of the rectangle</param>
         /// <returns>M&M count, as an unrounded float</returns>
-        public float GetData(string unit, float height, float width, float length)
+        [HttpGet("{unit:string, height:float, width:float, length:float}")]
+        public float GetDataForRectangle(string unit, float height, float width, float length)
         {
             Calculator calc = new Calculator();
             return calc.CountMandMs(unit, height, width, length);
@@ -45,7 +47,8 @@ namespace MandMCounter.Service.Controllers
         /// <param name="height">the height of the cylinder</param>
         /// <param name="radius">the radius of the container (half of the diameter)</param>
         /// <returns>M&M count, as an unrounded float</returns>
-        public float GetData(string unit, float height, float radius)
+        [HttpGet("{unit:string, height:float, radius:float}")]
+        public float GetDataForCylinder(string unit, float height, float radius)
         {
             Calculator calc = new Calculator();
             return calc.CountMandMs(unit, height, radius);
