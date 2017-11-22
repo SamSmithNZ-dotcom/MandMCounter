@@ -105,12 +105,18 @@ namespace MandMCounter.Core
                 case "gallon":
                     return Constants.USGallonToCubicCM * quantity;
                 case "quart":
+                case "qt":
                     return Constants.USQuartToCubicCm * quantity;
+                case "ounce":
+                case "oz":
+                    return Constants.USFluidOunceToCubicCm * quantity;
                 case "cup":
                     return Constants.USCupToCubicCm * quantity;
                 case "tablespoon":
+                case "tlsp":
                     return Constants.USTableSpoonToCubicCm * quantity;
                 case "teaspoon":
+                case "tsp":
                     return Constants.USTeaSpoonToCubicCm * quantity;
                 default:
                     throw new Exception("Unknown unit when calculating volume of unit: " + unit);
@@ -130,6 +136,8 @@ namespace MandMCounter.Core
             {
                 case "cm":
                     return baseCalculation;
+                case "meter":
+                case "metre":
                 case "m":
                     return 1000f * baseCalculation;
                 case "inch":

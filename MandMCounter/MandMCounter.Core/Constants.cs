@@ -24,7 +24,7 @@ namespace MandMCounter.Core
         public const float USGallonToCubicCM = 3785.4119997685f;
         public const float USQuartToCubicCm = 946.353f;
         public const float USCupToCubicCm = 236.5882f;
-        public const float USFluidOunceToCubicCm = 29.5735f;
+        public const float USFluidOunceToCubicCm = 29.5735f; 
         public const float USTableSpoonToCubicCm = 14.786750000399932148f;
         public const float USTeaSpoonToCubicCm = 4.92891507305157f;
         public const float USCubicInchesToCubicCM = 16.3871f;

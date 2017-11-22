@@ -41,6 +41,22 @@ namespace MandMCounter.Tests
         }
 
         [TestMethod]
+        public void CountMandMsInAUSOunceTest()
+        {
+            //Arrange
+            string unit = "Ounce";
+            float quantity = 1f;
+
+            //Act
+            Calculator calc = new Calculator();
+            float result = calc.CountMandMs(unit, quantity);
+
+            //Assert
+            Assert.IsTrue(System.Math.Round(result, 0) == 32f);
+        }
+        
+
+        [TestMethod]
         public void CountMandMsInAUSCupTest()
         {
             //Arrange
