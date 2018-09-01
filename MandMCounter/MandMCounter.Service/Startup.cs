@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc.Cors.Internal;
 
 namespace MandMCounter.Service
 {
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     public class Startup
     {
         public Startup(IConfiguration configuration)
