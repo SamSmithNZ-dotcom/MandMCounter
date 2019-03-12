@@ -10,23 +10,23 @@ namespace MandMCounter.Core
         /// To count the number of M&Ms in a container based on unit volume (Quart/Gallon/Liter, etc)
         /// </summary>
         /// <param name="unit">String Quart/Gallon/Liter</param>
-        /// <param name="quanity">Any float number</param>
+        /// <param name="quantity">Any float number</param>
         /// <returns>M&M count, as an unrounded float</returns>
-        public float CountMandMs(string unit, float quanity)
+        public float CountMandMs(string unit, float quantity)
         {
-            float numberOfMandMs = GetCubicCmForVolume(unit, quanity) * Constants.MandMSDensityPercent / Constants.MandMVolumeCubicCm;
+            float numberOfMandMs = GetCubicCmForVolume(unit, quantity) * Constants.MandMSDensityPercent / Constants.MandMVolumeCubicCm;
             return numberOfMandMs;
         }
 
-        public float CountPeanutMandMs(string unit, float quanity)
+        public float CountPeanutMandMs(string unit, float quantity)
         {
-            float numberOfMandMs = GetCubicCmForVolume(unit, quanity) * Constants.PeanutMandMSDensityPercent / Constants.PeanutMandMVolumeCubicCm;
+            float numberOfMandMs = GetCubicCmForVolume(unit, quantity) * Constants.PeanutMandMSDensityPercent / Constants.PeanutMandMVolumeCubicCm;
             return numberOfMandMs;
         }
 
-        public float CountSkittles(string unit, float quanity)
+        public float CountSkittles(string unit, float quantity)
         {
-            float numberOfMandMs = GetCubicCmForVolume(unit, quanity) * Constants.SkittlesDensityPercent / Constants.SkittlesVolumeCubicCm;
+            float numberOfMandMs = GetCubicCmForVolume(unit, quantity) * Constants.SkittlesDensityPercent / Constants.SkittlesVolumeCubicCm;
             return numberOfMandMs;
         }
 
