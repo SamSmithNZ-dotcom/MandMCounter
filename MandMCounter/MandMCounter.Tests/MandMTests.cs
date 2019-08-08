@@ -8,7 +8,7 @@ namespace MandMCounter.Tests
     [TestClass]
     public class MandMTests
     {
-        #region "Testing units"
+        #region " Testing units"
 
         [TestMethod]
         public void CountMandMsInAUSGallonTest()
@@ -54,7 +54,22 @@ namespace MandMCounter.Tests
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 32f);
         }
-        
+
+        [TestMethod]
+        public void CountMandMsIn21PoundsTest()
+        {
+            //Arrange
+            string unit = "Pound";
+            float quantity = 21f;
+
+            //Act
+            Calculator calc = new Calculator();
+            float result = calc.CountMandMs(unit, quantity);
+
+            //Assert
+            Assert.IsTrue(System.Math.Round(result, 0) == 339973f);
+        }
+
 
         [TestMethod]
         public void CountMandMsInAUSCupTest()

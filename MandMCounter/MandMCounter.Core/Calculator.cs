@@ -92,12 +92,18 @@ namespace MandMCounter.Core
             {
                 case "liter":
                 case "litre":
+                case "l":
                     return 1000f * quantity;
                 case "gallon":
+                case "g":
                     return Constants.USGallonToCubicCM * quantity;
                 case "quart":
                 case "qt":
                     return Constants.USQuartToCubicCm * quantity;
+                case "pound":
+                case "lb:": 
+                    //16 oz in a pound
+                    return Constants.USQuartToCubicCm * 16 * quantity;
                 case "ounce":
                 case "oz":
                     return Constants.USFluidOunceToCubicCm * quantity;

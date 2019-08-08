@@ -8,7 +8,7 @@ namespace MandMCounter.Tests
     [TestClass]
     public class SkittleTests
     {
-        #region "Testing units"
+        #region " Testing units"
 
         [TestMethod]
         public void CountSkittlesInAUSGallonTest()
