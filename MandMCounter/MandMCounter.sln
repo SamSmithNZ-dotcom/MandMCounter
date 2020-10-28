@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30615.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MandMCounter.Core", "MandMCounter.Core\MandMCounter.Core.csproj", "{265FB823-9182-4FA0-8044-5FB9FB29D41D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MandMCounter.Tests", "MandMCounter.Tests\MandMCounter.Tests.csproj", "{3A220963-317A-44A4-9A42-AA23E425545A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MandMCounter.Service", "MandMCounter.Service\MandMCounter.Service.csproj", "{0CA36BB1-5A4C-499E-A89C-C2333BC5000F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{3A220963-317A-44A4-9A42-AA23E425545A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A220963-317A-44A4-9A42-AA23E425545A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A220963-317A-44A4-9A42-AA23E425545A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA36BB1-5A4C-499E-A89C-C2333BC5000F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA36BB1-5A4C-499E-A89C-C2333BC5000F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA36BB1-5A4C-499E-A89C-C2333BC5000F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA36BB1-5A4C-499E-A89C-C2333BC5000F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
