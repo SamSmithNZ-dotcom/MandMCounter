@@ -39,9 +39,9 @@ jobs:
     - name: Test
       run: dotnet test MandMCounter/MandMCounter.Tests/MandMCounter.Tests.csproj --configuration release
     - name: PublishService
-      run: dotnet publish MandMCounter/MandMCounter.Service/MandMCounter.Service.csproj --configuration release  --output ${{ github.workspace }}/service -p:Version='${{ steps.gitversion.outputs.SemVer }}'
+      run: dotnet publish MandMCounter/MandMCounter.Service/MandMCounter.Service.csproj --configuration release --output ${{ github.workspace }}/service -p:Version='${{ steps.gitversion.outputs.SemVer }}'
     - name: Pack dll to NuGet package
-      run: dotnet pack MandMCounter/MandMCounter.Core/MandMCounter.Core.csproj -p:Version='${{ steps.gitversion.outputs.SemVer }}' --configuration release
+      run: dotnet pack MandMCounter/MandMCounter.Core/MandMCounter.Core.csproj --configuration release -p:Version='${{ steps.gitversion.outputs.SemVer }}' 
     - name: Publish Artifact
       uses: actions/upload-artifact@v2
       with:
@@ -53,9 +53,33 @@ jobs:
         name: nugetPackage
         path: MandMCounter/MandMCounter.Core/bin/Release/ 
 
+  deploy:
+    name: Deploy web service
+    runs-on: ubuntu-latest
+    needs:
+    - build
+    steps:
+    - name: Download the build artifacts
+      uses: actions/download-artifact@v2
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.ORG_AZURE_SP }}
+    #- name: Deploy infrastructure with ARM templates
+    #  uses: azure/cli@v1.0.0
+    #  with:
+    #    inlineScript: EnvironmentARMTemplate\PowerShell\DeployInfrastructureWebService.ps1 -appPrefix "samsapp" -environment "prod" -webAppEnvironment "prod" -resourceGroupName "SamSmithNZ.com" -resourceGroupLocation "East US" -resourceGroupLocationShort "eu" -dataKeyVaultName "tbd" -templatesLocation "${{ github.workspace }}\drop\EnvironmentARMTemplate\Templates" -sqlDatabaseName "ssnzdb" -sqlAdministratorLoginUser "" -sqlAdministratorLoginPassword ""
+    #    azcliversion: latest
+    - name: 'App Service Deploy: M&M counter web service'
+      uses: Azure/webapps-deploy@v2
+      with:
+        app-name: mandm-prod-eu-service
+        package: service
+        slot-name: production #staging
+
   release:
     runs-on: ubuntu-latest    
-    needs: build
+    needs: [ build, deploy ]
     if: github.ref == 'refs/heads/main' # only run job if on the main branch   
     
     steps: 
@@ -63,12 +87,6 @@ jobs:
     #Push NuGet package to GitHub packages
     - name: Download nuget package artifact
       uses: actions/download-artifact@v1.0.0
-      with:
-        name: nugetPackage
-    - name: Download nuget package artifact
-      uses: actions/download-artifact@v1.0.0
-      with:
-        name: service
     - name: Prep packages
       run: dotnet nuget add source --username samsmithnz --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/SamSmithNZ-dotcom/index.json"
     - name: Push package to GitHub packages 
