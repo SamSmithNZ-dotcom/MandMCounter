@@ -60,7 +60,9 @@ jobs:
     - build
     steps:
     - uses: actions/checkout@v2
-    - run: echo ${{ secrets.ORG_AZURE_SP }
+    - run: |
+       echo "here we go!"
+       echo ${{ secrets.ORG_AZURE_SP }}
     - name: Azure Login
       uses: azure/login@v1
       with:
