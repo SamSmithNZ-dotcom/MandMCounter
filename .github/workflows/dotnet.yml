@@ -60,18 +60,14 @@ jobs:
     - build
     steps:
     - uses: actions/checkout@v2
-    - run: |
-       echo "here we go!"
-       echo "${{ secrets.MYSECRET }}"
-       echo "${{ secrets.ORG_AZURE_SP }}"
-    - name: Azure Login
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.ORG_AZURE_SP }}
     - name: Download the build artifacts
       uses: actions/download-artifact@v2
       with:
         name: service
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.ORG_AZURE_SP }}
     #- name: Deploy infrastructure with ARM templates
     #  uses: azure/cli@v1.0.0
     #  with:
