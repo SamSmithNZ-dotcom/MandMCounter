@@ -8,10 +8,29 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    name: Build .NET
+    runs-on: windows-latest
+    outputs: # https://stackoverflow.com/questions/59175332/using-output-from-a-previous-job-in-a-new-one-in-a-github-action
+      Version: ${{ steps.gitversion.outputs.SemVer }}
+      CommitsSinceVersionSource: ${{ steps.gitversion.outputs.CommitsSinceVersionSource }}  
     steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 #fetch-depth is needed for GitVersion
+        
+    #Install and calculate the new version with GitVersion  
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v0.9.7
+      with:
+        versionSpec: 5.x
+    - name: Determine Version
+      uses: gittools/actions/gitversion/execute@v0.9.7
+      id: gitversion # step id used as reference for output values
+    - name: Display GitVersion outputs
+      run: |
+        echo "Version: ${{ steps.gitversion.outputs.SemVer }}"
+        echo "CommitsSinceVersionSource: ${{ steps.gitversion.outputs.CommitsSinceVersionSource }}"
+        
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
@@ -19,10 +38,49 @@ jobs:
         dotnet-version: 5.0.x
     - name: Test
       run: dotnet test MandMCounter/MandMCounter.Tests/MandMCounter.Tests.csproj --configuration release
-    - name: Publish
-      run: dotnet publish MandMCounter/MandMCounter.Service/MandMCounter.Service.csproj --configuration release --output ${{ github.workspace }}
+    - name: PublishService
+      run: dotnet publish MandMCounter/MandMCounter.Service/MandMCounter.Service.csproj --configuration release  --output ${{ github.workspace }}/service -p:Version='${{ steps.gitversion.outputs.SemVer }}'
+    - name: Pack dll to NuGet package
+      run: dotnet pack MandMCounter/MandMCounter.Core/MandMCounter.Core.csproj -p:Version='${{ steps.gitversion.outputs.SemVer }}' --configuration release
     - name: Publish Artifact
       uses: actions/upload-artifact@v2
       with:
-        path: ${{ github.workspace }}
+        name: service
+        path: ${{ github.workspace }}/service
+    - name: Upload NuGet package to GitHub
+      uses: actions/upload-artifact@v2
+      with:
+        name: nugetPackage
+        path: MandMCounter/MandMCounter.Core/bin/Release/ 
 
+  release:
+    runs-on: ubuntu-latest    
+    needs: build
+    if: github.ref == 'refs/heads/main' # only run job if on the main branch   
+    
+    steps: 
+    
+    #Push NuGet package to GitHub packages
+    - name: Download nuget package artifact
+      uses: actions/download-artifact@v1.0.0
+      with:
+        name: nugetPackage
+    - name: Download nuget package artifact
+      uses: actions/download-artifact@v1.0.0
+      with:
+        name: service
+    - name: Prep packages
+      run: dotnet nuget add source --username samsmithnz --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/samsmithnz/index.json"
+    - name: Push package to GitHub packages 
+      if: needs.build.outputs.CommitsSinceVersionSource > 0 #Only release if there has been a commit/version change  
+      run: dotnet nuget push nugetPackage/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }}  --source "github"
+    
+    #Create release
+    - name: Create Release
+      if: needs.build.outputs.CommitsSinceVersionSource > 0 #Only release if there has been a commit/version change
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+        tag_name: ${{ needs.build.outputs.Version }}
+        release_name: Release ${{ needs.build.outputs.Version }}
