@@ -2,9 +2,9 @@ name: CI/CD
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -17,9 +17,12 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test MandMCounter/MandMCounter.Tests/MandMCounter.Tests.csproj --configuration release
+    - name: Publish
+      run: dotnet publish MandMCounter/MandMCounter.Service/MandMCounter.Service.csproj --configuration release --output ${{ github.workspace }}
+    - name: Publish Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        path: ${{ github.workspace }}
+
