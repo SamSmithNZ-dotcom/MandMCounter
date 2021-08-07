@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using MandMCounter.Core;
 using Microsoft.AspNetCore.Mvc;
-using MandMCounter.Core;
 
 namespace MandMCounter.Service.Controllers
 {
@@ -15,22 +10,19 @@ namespace MandMCounter.Service.Controllers
         [HttpGet("GetDataForUnit")]
         public float GetDataForUnit(string unit, float quantity)
         {
-            Calculator calc = new Calculator();
-            return calc.CountSkittles(unit, quantity);
+            return Calculator.CountSkittles(unit, quantity);
         }
 
         [HttpGet("GetDataForRectangle")]
         public float GetDataForRectangle(string unit, float height, float width, float length)
         {
-            Calculator calc = new Calculator();
-            return calc.CountSkittles(unit, height, width, length);
+            return Calculator.CountSkittles(unit, height, width, length);
         }
 
         [HttpGet("GetDataForCylinder")]
         public float GetDataForCylinder(string unit, float height, float radius)
         {
-            Calculator calc = new Calculator();
-            return calc.CountSkittles(unit, height, radius);
+            return Calculator.CountSkittles(unit, height, radius);
         }
     }
 }

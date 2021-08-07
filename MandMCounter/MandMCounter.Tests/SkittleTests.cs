@@ -18,8 +18,8 @@ namespace MandMCounter.Tests
             float quantity = 1f;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountSkittles(unit, quantity);
+            
+            float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 3393f);
@@ -33,8 +33,8 @@ namespace MandMCounter.Tests
             float quantity = 1f;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountSkittles(unit, quantity);
+            
+            float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 848f);
@@ -48,8 +48,8 @@ namespace MandMCounter.Tests
             float quantity = 1f;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountSkittles(unit, quantity);
+            
+            float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 212f);
@@ -64,8 +64,8 @@ namespace MandMCounter.Tests
             float quantity = 0.25f;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountSkittles(unit, quantity);
+            
+            float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 53f);
@@ -79,8 +79,8 @@ namespace MandMCounter.Tests
             float quantity = 1;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountSkittles(unit, quantity);
+            
+            float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 13f);
@@ -94,8 +94,8 @@ namespace MandMCounter.Tests
             float quantity = 1;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountSkittles(unit, quantity);
+            
+            float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 4f);
@@ -111,8 +111,8 @@ namespace MandMCounter.Tests
                 float quantity = 1;
 
                 //Act
-                Calculator calc = new Calculator();
-                float result = calc.CountSkittles(unit, quantity);
+                
+                float result = Calculator.CountSkittles(unit, quantity);
             }
             catch (Exception ex)
             {
@@ -129,8 +129,8 @@ namespace MandMCounter.Tests
             float quantity = 1f;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountSkittles(unit, quantity);
+            
+            float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 896f);
@@ -150,8 +150,8 @@ namespace MandMCounter.Tests
             float length = 10;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountSkittles(unit, height, width, length);
+            
+            float result = Calculator.CountSkittles(unit, height, width, length);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 896f);
@@ -167,8 +167,8 @@ namespace MandMCounter.Tests
             float length = 1;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountSkittles(unit, height, width, length);
+            
+            float result = Calculator.CountSkittles(unit, height, width, length);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 15f);
@@ -187,8 +187,8 @@ namespace MandMCounter.Tests
                 float length = 1;
 
                 //Act
-                Calculator calc = new Calculator();
-                float result = calc.CountSkittles(unit, height, width, length);
+                
+                float result = Calculator.CountSkittles(unit, height, width, length);
             }
             catch (Exception ex)
             {
@@ -210,8 +210,8 @@ namespace MandMCounter.Tests
             float radius = 5;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountSkittles(unit, height, radius);
+            
+            float result = Calculator.CountSkittles(unit, height, radius);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 704f);
@@ -226,8 +226,8 @@ namespace MandMCounter.Tests
             float radius = 2;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountSkittles(unit, height, radius);
+            
+            float result = Calculator.CountSkittles(unit, height, radius);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 738f);
@@ -244,8 +244,8 @@ namespace MandMCounter.Tests
                 float radius = 5;
 
                 //Act
-                Calculator calc = new Calculator();
-                float result = calc.CountSkittles(unit, height, radius);
+                
+                float result = Calculator.CountSkittles(unit, height, radius);
             }
             catch (Exception ex)
             {

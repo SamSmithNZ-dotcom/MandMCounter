@@ -12,19 +12,19 @@ namespace MandMCounter.Core
         /// <param name="unit">String Quart/Gallon/Liter</param>
         /// <param name="quantity">Any float number</param>
         /// <returns>M&M count, as an unrounded float</returns>
-        public float CountMandMs(string unit, float quantity)
+        public static float CountMandMs(string unit, float quantity)
         {
             float numberOfMandMs = GetCubicCmForVolume(unit, quantity) * Constants.MandMSDensityPercent / Constants.MandMVolumeCubicCm;
             return numberOfMandMs;
         }
 
-        public float CountPeanutMandMs(string unit, float quantity)
+        public static float CountPeanutMandMs(string unit, float quantity)
         {
             float numberOfMandMs = GetCubicCmForVolume(unit, quantity) * Constants.PeanutMandMSDensityPercent / Constants.PeanutMandMVolumeCubicCm;
             return numberOfMandMs;
         }
 
-        public float CountSkittles(string unit, float quantity)
+        public static float CountSkittles(string unit, float quantity)
         {
             float numberOfMandMs = GetCubicCmForVolume(unit, quantity) * Constants.SkittlesDensityPercent / Constants.SkittlesVolumeCubicCm;
             return numberOfMandMs;
@@ -38,19 +38,19 @@ namespace MandMCounter.Core
         /// <param name="width">the width of the rectangle</param>
         /// <param name="length">the length of the rectangle</param>
         /// <returns>M&M count, as an unrounded float</returns>
-        public float CountMandMs(string unit, float height, float width, float length)
+        public static float CountMandMs(string unit, float height, float width, float length)
         {
             float numberOfMandMs = GetCubicCmForRectangle(unit, height, width, length) * Constants.MandMSDensityPercent / Constants.MandMVolumeCubicCm;
             return numberOfMandMs;
         }
 
-        public float CountPeanutMandMs(string unit, float height, float width, float length)
+        public static float CountPeanutMandMs(string unit, float height, float width, float length)
         {
             float numberOfMandMs = GetCubicCmForRectangle(unit, height, width, length) * Constants.PeanutMandMSDensityPercent / Constants.PeanutMandMVolumeCubicCm;
             return numberOfMandMs;
         }
 
-        public float CountSkittles(string unit, float height, float width, float length)
+        public static float CountSkittles(string unit, float height, float width, float length)
         {
             float numberOfMandMs = GetCubicCmForRectangle(unit, height, width, length) * Constants.SkittlesDensityPercent / Constants.SkittlesVolumeCubicCm;
             return numberOfMandMs;
@@ -63,25 +63,25 @@ namespace MandMCounter.Core
         /// <param name="height">the height of the cylinder</param>
         /// <param name="radius">the radius of the container (half of the diameter)</param>
         /// <returns>M&M count, as an unrounded float</returns>
-        public float CountMandMs(string unit, float height, float radius)
+        public static float CountMandMs(string unit, float height, float radius)
         {
             float numberOfMandMs = GetCubicCmForCylinder(unit, height, radius) * Constants.MandMSDensityPercent / Constants.MandMVolumeCubicCm;
             return numberOfMandMs;
         }
 
-        public float CountPeanutMandMs(string unit, float height, float radius)
+        public static float CountPeanutMandMs(string unit, float height, float radius)
         {
             float numberOfMandMs = GetCubicCmForCylinder(unit, height, radius) * Constants.PeanutMandMSDensityPercent / Constants.PeanutMandMVolumeCubicCm;
             return numberOfMandMs;
         }
 
-        public float CountSkittles(string unit, float height, float radius)
+        public static float CountSkittles(string unit, float height, float radius)
         {
             float numberOfMandMs = GetCubicCmForCylinder(unit, height, radius) * Constants.SkittlesDensityPercent / Constants.SkittlesVolumeCubicCm;
             return numberOfMandMs;
         }
 
-        private float GetCubicCmForVolume(string unit, float quantity)
+        private static float GetCubicCmForVolume(string unit, float quantity)
         {
             if (string.IsNullOrEmpty(unit))
             {
@@ -120,7 +120,7 @@ namespace MandMCounter.Core
             }
         }
 
-        private float GetCubicCmForRectangle(string unit, float height, float width, float length)
+        private static float GetCubicCmForRectangle(string unit, float height, float width, float length)
         {
             if (string.IsNullOrEmpty(unit))
             {
@@ -146,7 +146,7 @@ namespace MandMCounter.Core
             }
         }
 
-        private float GetCubicCmForCylinder(string unit, float height, float radius)
+        private static float GetCubicCmForCylinder(string unit, float height, float radius)
         {
             if (string.IsNullOrEmpty(unit))
             {
