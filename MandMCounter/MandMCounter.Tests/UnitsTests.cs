@@ -15,8 +15,7 @@ namespace MandMCounter.Tests
             //Arrange
 
             //Act
-            Units units = new Units();
-            List<string> results = units.GetUnitsForVolume();
+            List<string> results = Units.GetUnitsForVolume();
 
             //Assert
             Assert.IsTrue(results != null);
@@ -30,8 +29,7 @@ namespace MandMCounter.Tests
             //Arrange
 
             //Act
-            Units units = new Units();
-            List<string> results = units.GetUnitsForContainer();
+            List<string> results = Units.GetUnitsForContainer();
 
             //Assert
             Assert.IsTrue(results != null);
@@ -47,8 +45,7 @@ namespace MandMCounter.Tests
             float quantity = 1f;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountSkittles(unit, quantity);
+            float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 212f);

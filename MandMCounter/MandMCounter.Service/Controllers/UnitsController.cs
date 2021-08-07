@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using MandMCounter.Core;
 using Microsoft.AspNetCore.Mvc;
-using MandMCounter.Core;
+using System.Collections.Generic;
 
 namespace MandMCounter.Service.Controllers
 {
@@ -15,15 +11,13 @@ namespace MandMCounter.Service.Controllers
         [HttpGet("GetUnitsForVolume")]
         public List<string> GetUnitsForVolume()
         {
-            Units unit = new Units();
-            return unit.GetUnitsForVolume();
+            return Units.GetUnitsForVolume();
         }
 
         [HttpGet("GetUnitsForContainer")]
         public List<string> GetUnitsForContainer()
         {
-            Units unit = new Units();
-            return unit.GetUnitsForContainer();
+            return Units.GetUnitsForContainer();
         }
 
     }

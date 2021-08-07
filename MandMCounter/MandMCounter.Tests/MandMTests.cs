@@ -18,8 +18,7 @@ namespace MandMCounter.Tests
             float quantity = 1f;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 4047f);
@@ -33,8 +32,7 @@ namespace MandMCounter.Tests
             float quantity = 1f;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 1012f);
@@ -47,9 +45,8 @@ namespace MandMCounter.Tests
             string unit = "Ounce";
             float quantity = 1f;
 
-            //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            //Act           
+            float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 32f);
@@ -62,9 +59,8 @@ namespace MandMCounter.Tests
             string unit = "Pound";
             float quantity = 21f;
 
-            //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            //Act           
+            float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 339973f);
@@ -79,8 +75,7 @@ namespace MandMCounter.Tests
             float quantity = 1f;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 253f);
@@ -95,8 +90,7 @@ namespace MandMCounter.Tests
             float quantity = 0.25f;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 63f);
@@ -110,8 +104,7 @@ namespace MandMCounter.Tests
             float quantity = 1;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 16f);
@@ -125,8 +118,7 @@ namespace MandMCounter.Tests
             float quantity = 1;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 5f);
@@ -142,8 +134,7 @@ namespace MandMCounter.Tests
                 float quantity = 1;
 
                 //Act
-                Calculator calc = new Calculator();
-                float result = calc.CountMandMs(unit, quantity);
+                float result = Calculator.CountMandMs(unit, quantity);
             }
             catch (Exception ex)
             {
@@ -160,8 +151,7 @@ namespace MandMCounter.Tests
             float quantity = 1f;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, quantity);
+            float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 1069f);
@@ -181,8 +171,7 @@ namespace MandMCounter.Tests
             float length = 10;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, width, length);
+            float result = Calculator.CountMandMs(unit, height, width, length);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 1069f);
@@ -198,8 +187,7 @@ namespace MandMCounter.Tests
             float length = 1;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, width, length);
+            float result = Calculator.CountMandMs(unit, height, width, length);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 1069f);
@@ -215,8 +203,7 @@ namespace MandMCounter.Tests
             float length = 1;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, width, length);
+            float result = Calculator.CountMandMs(unit, height, width, length);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 18f);
@@ -232,8 +219,7 @@ namespace MandMCounter.Tests
             float length = 1;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, width, length);
+            float result = Calculator.CountMandMs(unit, height, width, length);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 30276f);
@@ -252,8 +238,7 @@ namespace MandMCounter.Tests
                 float length = 1;
 
                 //Act
-                Calculator calc = new Calculator();
-                float result = calc.CountMandMs(unit, height, width, length);
+                float result = Calculator.CountMandMs(unit, height, width, length);
             }
             catch (Exception ex)
             {
@@ -275,8 +260,7 @@ namespace MandMCounter.Tests
             float radius = 5;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, radius);
+            float result = Calculator.CountMandMs(unit, height, radius);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 840f);
@@ -291,8 +275,7 @@ namespace MandMCounter.Tests
             float radius = 1;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, radius);
+            float result = Calculator.CountMandMs(unit, height, radius);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 3359f);
@@ -307,8 +290,7 @@ namespace MandMCounter.Tests
             float radius = 2;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, radius);
+            float result = Calculator.CountMandMs(unit, height, radius);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 881f);
@@ -323,8 +305,7 @@ namespace MandMCounter.Tests
             float radius = 1;
 
             //Act
-            Calculator calc = new Calculator();
-            float result = calc.CountMandMs(unit, height, radius);
+            float result = Calculator.CountMandMs(unit, height, radius);
 
             //Assert
             Assert.IsTrue(System.Math.Round(result, 0) == 95115f);
@@ -341,8 +322,7 @@ namespace MandMCounter.Tests
                 float radius = 5;
 
                 //Act
-                Calculator calc = new Calculator();
-                float result = calc.CountMandMs(unit, height, radius);
+                float result = Calculator.CountMandMs(unit, height, radius);
             }
             catch (Exception ex)
             {

@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace MandMCounter.Core
 {
     public class Units
     {
-        public List<string> GetUnitsForVolume()
+        public static List<string> GetUnitsForVolume()
         {
-            List<string> units = new List<string>
+            List<string> units = new()
             {
                 "teaspoon",
                 "tablespoon",
@@ -21,9 +20,9 @@ namespace MandMCounter.Core
             return units;
         }
 
-        public List<string> GetUnitsForContainer()
+        public static List<string> GetUnitsForContainer()
         {
-            List<string> units = new List<string>
+            List<string> units = new()
             {
                 "cm",
                 "meter",
