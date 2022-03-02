@@ -7,6 +7,8 @@ updates:
     time: "06:00"
     timezone: America/New_York
   open-pull-requests-limit: 10
+  assignees:
+    - "samsmithnz"
 - package-ecosystem: nuget
   directory: "/MandMCounter/MandMCounter.Service"
   schedule:
@@ -14,6 +16,8 @@ updates:
     time: "06:00"
     timezone: America/New_York
   open-pull-requests-limit: 10
+  assignees:
+    - "samsmithnz"
 - package-ecosystem: nuget
   directory: "/MandMCounter/MandMCounter.Tests"
   schedule:
@@ -21,3 +25,12 @@ updates:
     time: "06:00"
     timezone: America/New_York
   open-pull-requests-limit: 10
+  assignees:
+    - "samsmithnz"
+# Maintain dependencies for GitHub Actions
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+    interval: "daily"
+  assignees:
+  - "samsmithnz"
