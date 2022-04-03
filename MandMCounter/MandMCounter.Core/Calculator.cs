@@ -138,8 +138,10 @@ namespace MandMCounter.Core
                 case "m":
                     return 1000f * baseCalculation;
                 case "inch":
+                case "\"":
                     return Constants.USCubicInchesToCubicCM * baseCalculation;
                 case "feet":
+                case "'":
                     return Constants.USCubicFeetToCubicCM * baseCalculation;
                 default:
                     throw new Exception("Unknown unit when calculating volume of rectangle: " + unit);
@@ -160,11 +162,15 @@ namespace MandMCounter.Core
             {
                 case "cm":
                     return baseCalculation;
+                case "meter":
+                case "metre":
                 case "m":
                     return 1000f * baseCalculation;
                 case "inch":
+                case "\"":
                     return Constants.USCubicInchesToCubicCM * baseCalculation;
                 case "feet":
+                case "'":
                     return Constants.USCubicFeetToCubicCM * baseCalculation;
                 default:
                     throw new Exception("Unknown unit when calculating volume of cylinder: " + unit);

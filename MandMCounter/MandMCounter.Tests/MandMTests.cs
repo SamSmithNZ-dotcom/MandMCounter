@@ -282,6 +282,21 @@ namespace MandMCounter.Tests
         }
 
         [TestMethod]
+        public void CountMandMsInACylinderWithMeterTest()
+        {
+            //Arrange
+            string unit = "meter";
+            float height = 1;
+            float radius = 1;
+
+            //Act
+            float result = Calculator.CountMandMs(unit, height, radius);
+
+            //Assert
+            Assert.IsTrue(System.Math.Round(result, 0) == 3359f);
+        }
+
+        [TestMethod]
         public void CountMandMsInACylinderWithInchTest()
         {
             //Arrange
