@@ -44,12 +44,12 @@ jobs:
     - name: Pack dll to NuGet package
       run: dotnet pack MandMCounter/MandMCounter.Core/MandMCounter.Core.csproj --configuration release -p:Version='${{ steps.gitversion.outputs.SemVer }}' 
     - name: Publish Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: service
         path: ${{ github.workspace }}/service
     - name: Upload NuGet package to GitHub
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: nugetPackage
         path: MandMCounter/MandMCounter.Core/bin/Release/ 
