@@ -38,7 +38,10 @@ jobs:
         dotnet-version: 6.0.x
         include-prerelease: true
     - name: Test
-      run: dotnet test MandMCounter/MandMCounter.Tests/MandMCounter.Tests.csproj --configuration release
+      run: dotnet test MandMCounter/MandMCounter.Tests/MandMCounter.Tests.csproj --configuration release -l:"trx;LogFileName=${{ github.workspace }}/TestOutput.xml"
+    - uses: samsmithnz/DotNetTestResults@0.1.0
+      with:
+        fileName: ${{ github.workspace }}/TestOutput.xml
     - name: PublishService
       run: dotnet publish MandMCounter/MandMCounter.Service/MandMCounter.Service.csproj --configuration release --output ${{ github.workspace }}/service -p:Version='${{ steps.gitversion.outputs.SemVer }}'
     - name: Pack dll to NuGet package
