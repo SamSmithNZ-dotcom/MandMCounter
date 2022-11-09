@@ -36,7 +36,6 @@ jobs:
       uses: actions/setup-dotnet@v3.0.3
       with:
         dotnet-version: 7.0.x
-        include-prerelease: true
     - name: Test
       run: dotnet test MandMCounter/MandMCounter.Tests/MandMCounter.Tests.csproj --configuration release -l:"trx;LogFileName=${{ github.workspace }}/TestOutput.xml"
     - uses: samsmithnz/DotNetTestResults@0.1.3
