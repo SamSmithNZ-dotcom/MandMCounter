@@ -1,7 +1,7 @@
 # M&M Counter (or MandMCounter)
 
 [![Build status](https://github.com/SamSmithNZ-dotcom/MandMCounter/actions/workflows/dotnet.yml/badge.svg)](https://github.com/SamSmithNZ-dotcom/MandMCounter/actions/workflows/dotnet.yml)
-[![Coverage Status](https://coveralls.io/repos/github/samsmithnz/MandMCounter/badge.svg?branch=main)](https://coveralls.io/github/samsmithnz/MandMCounter?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/SamSmithNZ-dotcom/MandMCounter/badge.svg?branch=main)](https://coveralls.io/github/SamSmithNZ-dotcom/MandMCounter?branch=main)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=samsmithnz_MandMCounter&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=samsmithnz_MandMCounter)
 [![Current Release](https://img.shields.io/github/release/samsmithnz/MandMCounter/all.svg)](https://github.com/samsmithnz/MandMCounter/releases)
 
