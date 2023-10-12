@@ -98,7 +98,7 @@ jobs:
     #    inlineScript: EnvironmentARMTemplate\PowerShell\DeployInfrastructureWebService.ps1 -appPrefix "samsapp" -environment "prod" -webAppEnvironment "prod" -resourceGroupName "SamSmithNZ.com" -resourceGroupLocation "East US" -resourceGroupLocationShort "eu" -dataKeyVaultName "tbd" -templatesLocation "${{ github.workspace }}\drop\EnvironmentARMTemplate\Templates" -sqlDatabaseName "ssnzdb" -sqlAdministratorLoginUser "" -sqlAdministratorLoginPassword ""
     #    azcliversion: latest
     - name: 'App Service Deploy: M&M counter web service'
-      uses: Azure/webapps-deploy@v2
+      uses: Azure/webapps-deploy@v3
       with:
         app-name: mandm-prod-eu-service
         package: service
