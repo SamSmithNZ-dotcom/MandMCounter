@@ -35,7 +35,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3.2.0
       with:
-        dotnet-version: 7.0.x
+        dotnet-version: 8.0.x
     - name: Test
       run: dotnet test MandMCounter/MandMCounter.Tests/MandMCounter.Tests.csproj --configuration Debug -e:CollectCoverage=true -e:CoverletOutput=TestResults/ -e:CoverletOutputFormat=lcov #-l:"trx;LogFileName=${{ github.workspace }}/TestOutput.xml" 
     - uses: samsmithnz/DotNetTestResults@0.1.5
@@ -72,7 +72,7 @@ jobs:
         uses: samsmithnz/SamsDotNetSonarCloudAction@v2.0.1
         with:
           projects: 'MandMCounter/MandMCounter.Core/MandMCounter.Core.csproj,MandMCounter/MandMCounter.Service/MandMCounter.Service.csproj, MandMCounter/MandMCounter.Tests/MandMCounter.Tests.csproj'
-          dotnet-version: '7.0.x'
+          dotnet-version: '8.0.x'
           sonarcloud-organization: samsmithnz-github
           sonarcloud-project: samsmithnz_MandMCounter
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
