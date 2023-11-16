@@ -1,7 +1,7 @@
 version: 2
 updates:
 - package-ecosystem: nuget
-  directory: "/MandMCounter/MandMCounter.Core"
+  directory: "/src/MandMCounter.Core"
   schedule:
     interval: daily
     time: "06:00"
@@ -14,7 +14,7 @@ updates:
       patterns: ["*"]
       update-types: ["minor","patch"]
 - package-ecosystem: nuget
-  directory: "/MandMCounter/MandMCounter.Service"
+  directory: "/src/MandMCounter.Service"
   schedule:
     interval: daily
     time: "06:00"
@@ -27,7 +27,7 @@ updates:
       patterns: ["*"]
       update-types: ["minor","patch"]
 - package-ecosystem: nuget
-  directory: "/MandMCounter/MandMCounter.Tests"
+  directory: "/src/MandMCounter.Tests"
   schedule:
     interval: daily
     time: "06:00"
