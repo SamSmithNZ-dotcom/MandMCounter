@@ -52,12 +52,12 @@ jobs:
     - name: Pack dll to NuGet package
       run: dotnet pack src/MandMCounter.Core/MandMCounter.Core.csproj --configuration release -p:Version='${{ steps.gitversion.outputs.SemVer }}' 
     - name: Publish Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: service
         path: ${{ github.workspace }}/service
     - name: Upload NuGet package to GitHub
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: nugetPackage
         path: src/MandMCounter.Core/bin/Release/ 
@@ -87,7 +87,7 @@ jobs:
     if: github.ref == 'refs/heads/main' # only run job if on the main branch   
     steps:
     - name: Download the build artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
     - name: Azure Login
       uses: azure/login@v1
       with:
@@ -113,7 +113,7 @@ jobs:
     
     #Push NuGet package to GitHub packages
     - name: Download nuget package artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
     - name: Prep packages
       run: dotnet nuget add source --username samsmithnz --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/SamSmithNZ-dotcom/index.json"
     - name: Push package to GitHub packages 
