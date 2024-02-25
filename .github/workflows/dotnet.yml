@@ -38,7 +38,7 @@ jobs:
         dotnet-version: 8.0.x
     - name: Test
       run: dotnet test src/MandMCounter.Tests/MandMCounter.Tests.csproj --configuration Debug -e:CollectCoverage=true -e:CoverletOutput=TestResults/ -e:CoverletOutputFormat=lcov #-l:"trx;LogFileName=${{ github.workspace }}/TestOutput.xml" 
-    - uses: samsmithnz/DotNetTestResults@0.1.5
+    - uses: samsmithnz/DotNetTestResults@0.1.6
       if: false
       with:
         fileName: ${{ github.workspace }}/TestOutput.xml
