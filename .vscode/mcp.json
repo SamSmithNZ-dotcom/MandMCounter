@@ -1,0 +1,14 @@
+{
+    "inputs": [],
+    "servers": {
+        "MandMCounter.MCP": {
+            "type": "stdio",
+            "command": "C:\\Program Files\\dotnet\\dotnet.exe",
+            "args": [
+                "run",
+                "--project",
+                "C:\\Users\\samsm\\source\\repos\\MandMCounter\\src\\MandMCounter.MCP\\MandMCounter.MCP.csproj"
+            ]
+        }
+    }
+}
