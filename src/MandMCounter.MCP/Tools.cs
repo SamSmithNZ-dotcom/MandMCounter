@@ -1,6 +1,5 @@
 using MandMCounter.Core;
 using ModelContextProtocol.Server;
-using System.Collections.Generic;
 
 namespace MandMCounter.MCP
 {
@@ -9,13 +8,13 @@ namespace MandMCounter.MCP
     public class MandMCounterTool
     {
         [McpServerTool]
-        public float GetDataForUnit(string unit, float quantity) => Calculator.CountMandMs(unit, quantity);
+        public static float GetDataForUnit(string unit, float quantity) => Calculator.CountMandMs(unit, quantity);
 
         [McpServerTool]
-        public float GetDataForRectangle(string unit, float height, float width, float length) => Calculator.CountMandMs(unit, height, width, length);
+        public static float GetDataForRectangle(string unit, float height, float width, float length) => Calculator.CountMandMs(unit, height, width, length);
 
         [McpServerTool]
-        public float GetDataForCylinder(string unit, float height, float radius) => Calculator.CountMandMs(unit, height, radius);
+        public static float GetDataForCylinder(string unit, float height, float radius) => Calculator.CountMandMs(unit, height, radius);
     }
 
     // MCP tool for Peanut M&M counting
@@ -23,13 +22,13 @@ namespace MandMCounter.MCP
     public class PeanutMandMCounterTool
     {
         [McpServerTool]
-        public float GetDataForUnit(string unit, float quantity) => Calculator.CountPeanutMandMs(unit, quantity);
+        public static float GetDataForUnit(string unit, float quantity) => Calculator.CountPeanutMandMs(unit, quantity);
 
         [McpServerTool]
-        public float GetDataForRectangle(string unit, float height, float width, float length) => Calculator.CountPeanutMandMs(unit, height, width, length);
+        public static float GetDataForRectangle(string unit, float height, float width, float length) => Calculator.CountPeanutMandMs(unit, height, width, length);
 
         [McpServerTool]
-        public float GetDataForCylinder(string unit, float height, float radius) => Calculator.CountPeanutMandMs(unit, height, radius);
+        public static float GetDataForCylinder(string unit, float height, float radius) => Calculator.CountPeanutMandMs(unit, height, radius);
     }
 
     // MCP tool for Skittle counting
@@ -37,13 +36,13 @@ namespace MandMCounter.MCP
     public class SkittleCounterTool
     {
         [McpServerTool]
-        public float GetDataForUnit(string unit, float quantity) => Calculator.CountSkittles(unit, quantity);
+        public static float GetDataForUnit(string unit, float quantity) => Calculator.CountSkittles(unit, quantity);
 
         [McpServerTool]
-        public float GetDataForRectangle(string unit, float height, float width, float length) => Calculator.CountSkittles(unit, height, width, length);
+        public static float GetDataForRectangle(string unit, float height, float width, float length) => Calculator.CountSkittles(unit, height, width, length);
 
         [McpServerTool]
-        public float GetDataForCylinder(string unit, float height, float radius) => Calculator.CountSkittles(unit, height, radius);
+        public static float GetDataForCylinder(string unit, float height, float radius) => Calculator.CountSkittles(unit, height, radius);
     }
 
     // MCP tool for units
@@ -51,9 +50,9 @@ namespace MandMCounter.MCP
     public class UnitsTool
     {
         [McpServerTool]
-        public List<string> GetUnitsForVolume() => Units.GetUnitsForVolume();
+        public static List<string> GetUnitsForVolume() => Units.GetUnitsForVolume();
 
         [McpServerTool]
-        public List<string> GetUnitsForContainer() => Units.GetUnitsForContainer();
+        public static List<string> GetUnitsForContainer() => Units.GetUnitsForContainer();
     }
 }
