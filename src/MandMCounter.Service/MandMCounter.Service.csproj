@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ApplicationInsightsResourceId>/subscriptions/fec9e5e4-938a-48e4-b178-dbe2b305b084/resourcegroups/SamSmithNZ2017/providers/microsoft.insights/components/MandMCounter.Service</ApplicationInsightsResourceId>
     <ApplicationInsightsAnnotationResourceId>/subscriptions/fec9e5e4-938a-48e4-b178-dbe2b305b084/resourcegroups/SamSmithNZ2017/providers/microsoft.insights/components/MandMCounter.Service</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
