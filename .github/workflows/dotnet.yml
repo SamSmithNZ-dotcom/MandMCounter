@@ -11,7 +11,7 @@ jobs:
     name: Build .NET
     runs-on: windows-latest
     outputs: # https://stackoverflow.com/questions/59175332/using-output-from-a-previous-job-in-a-new-one-in-a-github-action
-      Version: ${{ steps.gitversion.outputs.SemVer }}
+      Version: ${{ steps.gitversion.outputs.MajorMinorPatch }}
       CommitsSinceVersionSource: ${{ steps.gitversion.outputs.CommitsSinceVersionSource }}  
     steps:
     - uses: actions/checkout@v6
@@ -28,7 +28,7 @@ jobs:
       id: gitversion # step id used as reference for output values
     - name: Display GitVersion outputs
       run: |
-        echo "Version: ${{ steps.gitversion.outputs.SemVer }}"
+        echo "Version: ${{ steps.gitversion.outputs.MajorMinorPatch }}"
         echo "CommitsSinceVersionSource: ${{ steps.gitversion.outputs.CommitsSinceVersionSource }}"
         
     - uses: actions/checkout@v6
@@ -48,9 +48,9 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         path-to-lcov: src/MandMCounter.Tests/TestResults/coverage.info  
     - name: PublishService
-      run: dotnet publish src/MandMCounter.Service/MandMCounter.Service.csproj --configuration release --output ${{ github.workspace }}/service -p:Version='${{ steps.gitversion.outputs.SemVer }}'
+      run: dotnet publish src/MandMCounter.Service/MandMCounter.Service.csproj --configuration release --output ${{ github.workspace }}/service -p:Version='${{ steps.gitversion.outputs.MajorMinorPatch }}'
     - name: Pack dll to NuGet package
-      run: dotnet pack src/MandMCounter.Core/MandMCounter.Core.csproj --configuration release -p:Version='${{ steps.gitversion.outputs.SemVer }}' 
+      run: dotnet pack src/MandMCounter.Core/MandMCounter.Core.csproj --configuration release -p:Version='${{ steps.gitversion.outputs.MajorMinorPatch }}' 
     - name: Publish Artifact
       uses: actions/upload-artifact@v5
       with:
