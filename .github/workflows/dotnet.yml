@@ -14,7 +14,7 @@ jobs:
       Version: ${{ steps.gitversion.outputs.SemVer }}
       CommitsSinceVersionSource: ${{ steps.gitversion.outputs.CommitsSinceVersionSource }}  
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
       with:
         fetch-depth: 0 #fetch-depth is needed for GitVersion
         
@@ -31,11 +31,11 @@ jobs:
         echo "Version: ${{ steps.gitversion.outputs.SemVer }}"
         echo "CommitsSinceVersionSource: ${{ steps.gitversion.outputs.CommitsSinceVersionSource }}"
         
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - name: Setup .NET
-      uses: actions/setup-dotnet@v5.0.0
+      uses: actions/setup-dotnet@v5.0.1
       with:
-        dotnet-version: 9.0.x
+        dotnet-version: 10.0.x
     - name: Test
       run: dotnet test src/MandMCounter.Tests/MandMCounter.Tests.csproj --configuration Debug -e:CollectCoverage=true -e:CoverletOutput=TestResults/ -e:CoverletOutputFormat=lcov #-l:"trx;LogFileName=${{ github.workspace }}/TestOutput.xml" 
     - uses: samsmithnz/DotNetTestResults@v0.2
@@ -72,7 +72,7 @@ jobs:
         uses: samsmithnz/SamsDotNetSonarCloudAction@v2
         with:
           projects: 'src/MandMCounter.Core/MandMCounter.Core.csproj,src/MandMCounter.Service/MandMCounter.Service.csproj, src/MandMCounter.Tests/MandMCounter.Tests.csproj'
-          dotnet-version: '9.0.x'
+          dotnet-version: '10.0.x'
           sonarcloud-organization: samsmithnz-github
           sonarcloud-project: samsmithnz_MandMCounter
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
