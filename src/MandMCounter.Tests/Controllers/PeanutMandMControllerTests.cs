@@ -43,7 +43,7 @@ namespace MandMCounter.Tests.Controllers
             float result = controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 764f);
+            Assert.IsTrue((int)System.Math.Round(result, 0) == (int)764f);
         }      
 
         #endregion
