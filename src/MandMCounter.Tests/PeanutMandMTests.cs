@@ -22,7 +22,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountPeanutMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 2892f);
+            Assert.AreEqual(2892, (int)System.Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountPeanutMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 1446f);
+            Assert.AreEqual(1446, (int)System.Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -52,7 +52,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountPeanutMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 181f);
+            Assert.AreEqual(181, (int)System.Math.Round(result, 0));
         }
 
 
