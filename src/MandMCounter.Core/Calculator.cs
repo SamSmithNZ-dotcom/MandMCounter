@@ -85,7 +85,7 @@ namespace MandMCounter.Core
         {
             if (string.IsNullOrEmpty(unit))
             {
-                unit = "";
+                throw new ArgumentNullException(nameof(unit), "Unknown unit when calculating volume of unit: " + unit);
             }
 
             switch (unit.ToLower())
