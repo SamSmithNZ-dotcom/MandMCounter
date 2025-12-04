@@ -7,7 +7,7 @@ namespace MandMCounter.Tests
 {
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     [TestClass]
-    public class UnitsTests
+    public class UnitTests
     {
         [TestMethod]
         public void GetUnitsForVolumeTest()
@@ -18,9 +18,9 @@ namespace MandMCounter.Tests
             List<string> results = Units.GetUnitsForVolume();
 
             //Assert
-            Assert.IsTrue(results != null);
+            Assert.IsNotNull(results);
             Assert.IsTrue(results.Count > 0);
-            Assert.IsTrue(string.IsNullOrEmpty(results[0]) == false);
+            Assert.IsFalse(string.IsNullOrEmpty(results[0]));
         }
 
         [TestMethod]
@@ -32,9 +32,9 @@ namespace MandMCounter.Tests
             List<string> results = Units.GetUnitsForContainer();
 
             //Assert
-            Assert.IsTrue(results != null);
+            Assert.IsNotNull(results);
             Assert.IsTrue(results.Count > 0);
-            Assert.IsTrue(string.IsNullOrEmpty(results[0]) == false);
+            Assert.IsFalse(string.IsNullOrEmpty(results[0]));
         }
 
         [TestMethod]

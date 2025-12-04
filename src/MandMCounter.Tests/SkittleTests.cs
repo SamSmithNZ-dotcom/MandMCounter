@@ -18,7 +18,6 @@ namespace MandMCounter.Tests
             float quantity = 1f;
 
             //Act
-            
             float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
@@ -33,7 +32,6 @@ namespace MandMCounter.Tests
             float quantity = 1f;
 
             //Act
-            
             float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
@@ -48,7 +46,6 @@ namespace MandMCounter.Tests
             float quantity = 1f;
 
             //Act
-            
             float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
@@ -178,7 +175,7 @@ namespace MandMCounter.Tests
             //Act
 
             //Assert
-            Assert.Throws<Exception>(() => Calculator.CountSkittles(unit, height, width, length));
+            Assert.Throws<ArgumentNullException>(() => Calculator.CountSkittles(unit, height, width, length));
         }
 
         #endregion
@@ -226,7 +223,7 @@ namespace MandMCounter.Tests
             float radius = 5;
 
             //Act & Assert
-            Assert.Throws<Exception>(() => Calculator.CountSkittles(unit, height, radius));
+            Assert.Throws<ArgumentNullException>(() => Calculator.CountSkittles(unit, height, radius));
         }
 
         #endregion
