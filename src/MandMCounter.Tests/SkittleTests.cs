@@ -109,7 +109,7 @@ namespace MandMCounter.Tests
             float quantity = 1;
 
             //Act & Assert
-            Assert.Throws<Exception>(() => Calculator.CountSkittles(unit, quantity));
+            Assert.Throws<ArgumentNullException>(() => Calculator.CountSkittles(unit, quantity));
         }
 
         [TestMethod]
@@ -169,11 +169,15 @@ namespace MandMCounter.Tests
         [TestMethod]
         public void CountSkittlesInA1CubicNullUnitTest()
         {
+            //Arrange
             string unit = null;
             float height = 1;
             float width = 1;
             float length = 1;
 
+            //Act
+
+            //Assert
             Assert.Throws<Exception>(() => Calculator.CountSkittles(unit, height, width, length));
         }
 
@@ -216,10 +220,12 @@ namespace MandMCounter.Tests
         [TestMethod]
         public void CountSkittlesInACylinderWithNullUnitTest()
         {
+            //Arrange
             string unit = null;
             float height = 10;
             float radius = 5;
 
+            //Act & Assert
             Assert.Throws<Exception>(() => Calculator.CountSkittles(unit, height, radius));
         }
 
