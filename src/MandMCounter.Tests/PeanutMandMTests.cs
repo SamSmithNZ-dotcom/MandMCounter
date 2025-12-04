@@ -112,7 +112,7 @@ namespace MandMCounter.Tests
 
                 //Act
                 
-                float result = Calculator.CountPeanutMandMs(unit, quantity);
+                Calculator.CountPeanutMandMs(unit, quantity);
             }
             catch (Exception ex)
             {
