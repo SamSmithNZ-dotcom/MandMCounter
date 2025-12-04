@@ -75,7 +75,9 @@ namespace MandMCounter.Tests.Controllers
             float result = _controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
-            Assert.IsTrue(System.Math.Abs(System.Math.Round(result, 0) - 704f) < 0.0001f);
+            const float expected = 704f;
+            const float delta = 0.0001f;
+            Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
         }
 
         #endregion
