@@ -112,7 +112,7 @@ namespace MandMCounter.Tests
 
                 //Act
                 
-                float result = Calculator.CountSkittles(unit, quantity);
+                Calculator.CountSkittles(unit, quantity);
             }
             catch (Exception ex)
             {
