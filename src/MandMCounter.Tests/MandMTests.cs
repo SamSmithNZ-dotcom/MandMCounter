@@ -101,7 +101,7 @@ namespace MandMCounter.Tests
         {
             //Arrange
             string unit = "Tablespoon";
-            float quantity = 1;
+            float quantity = 1f;
 
             //Act
             float result = Calculator.CountMandMs(unit, quantity);
@@ -115,7 +115,7 @@ namespace MandMCounter.Tests
         {
             //Arrange
             string unit = "Teaspoon";
-            float quantity = 1;
+            float quantity = 1f;
 
             //Act
             float result = Calculator.CountMandMs(unit, quantity);
@@ -127,20 +127,12 @@ namespace MandMCounter.Tests
         [TestMethod]
         public void CountMandMsInANullUnitTest()
         {
-            try
-            {
-                //Arrange
-                string unit = null;
-                float quantity = 1;
+            //Arrange
+            string unit = null;
+            float quantity = 1f;
 
-                //Act
-                Calculator.CountMandMs(unit, quantity);
-            }
-            catch (Exception ex)
-            {
-                //Assert
-                Assert.IsTrue(ex != null);
-            }
+            //Act & Assert
+            Assert.Throws<Exception>(() => Calculator.CountMandMs(unit, quantity));
         }
 
         [TestMethod]

@@ -104,21 +104,12 @@ namespace MandMCounter.Tests
         [TestMethod]
         public void CountSkittlesInANullUnitTest()
         {
-            try
-            {
-                //Arrange
-                string unit = null;
-                float quantity = 1;
+            //Arrange
+            string unit = null;
+            float quantity = 1;
 
-                //Act
-                
-                Calculator.CountSkittles(unit, quantity);
-            }
-            catch (Exception ex)
-            {
-                //Assert
-                Assert.IsTrue(ex != null);
-            }
+            //Act & Assert
+            Assert.Throws<Exception>(() => Calculator.CountSkittles(unit, quantity));
         }
 
         [TestMethod]
@@ -178,23 +169,12 @@ namespace MandMCounter.Tests
         [TestMethod]
         public void CountSkittlesInA1CubicNullUnitTest()
         {
-            try
-            {
-                //Arrange
-                string unit = null;
-                float height = 1;
-                float width = 1;
-                float length = 1;
+            string unit = null;
+            float height = 1;
+            float width = 1;
+            float length = 1;
 
-                //Act
-                
-                float result = Calculator.CountSkittles(unit, height, width, length);
-            }
-            catch (Exception ex)
-            {
-                //Assert
-                Assert.IsTrue(ex != null);
-            }
+            Assert.Throws<Exception>(() => Calculator.CountSkittles(unit, height, width, length));
         }
 
         #endregion
@@ -236,22 +216,11 @@ namespace MandMCounter.Tests
         [TestMethod]
         public void CountSkittlesInACylinderWithNullUnitTest()
         {
-            try
-            {
-                //Arrange
-                string unit = null;
-                float height = 10;
-                float radius = 5;
+            string unit = null;
+            float height = 10;
+            float radius = 5;
 
-                //Act
-                
-                float result = Calculator.CountSkittles(unit, height, radius);
-            }
-            catch (Exception ex)
-            {
-                //Assert
-                Assert.IsTrue(ex != null);
-            }
+            Assert.Throws<Exception>(() => Calculator.CountSkittles(unit, height, radius));
         }
 
         #endregion

@@ -104,21 +104,12 @@ namespace MandMCounter.Tests
         [TestMethod]
         public void CountPeanutMandMsInANullUnitTest()
         {
-            try
-            {
-                //Arrange
-                string unit = null;
-                float quantity = 1;
+            //Arrange
+            string unit = null;
+            float quantity = 1;
 
-                //Act
-                
-                Calculator.CountPeanutMandMs(unit, quantity);
-            }
-            catch (Exception ex)
-            {
-                //Assert
-                Assert.IsTrue(ex != null);
-            }
+            //Act & Assert
+            Assert.Throws<Exception>(() => Calculator.CountPeanutMandMs(unit, quantity));
         }
 
         [TestMethod]
@@ -178,23 +169,17 @@ namespace MandMCounter.Tests
         [TestMethod]
         public void CountPeanutMandMsInA1CubicNullUnitTest()
         {
-            try
-            {
-                //Arrange
-                string unit = null;
-                float height = 1;
-                float width = 1;
-                float length = 1;
+            //Arrange
+            string unit = null;
+            float height = 1;
+            float width = 1;
+            float length = 1;
 
-                //Act
-                
-                float result = Calculator.CountPeanutMandMs(unit, height, width, length);
-            }
-            catch (Exception ex)
+            //Act & Assert
+            Assert.Throws<Exception>(() =>
             {
-                //Assert
-                Assert.IsTrue(ex != null);
-            }
+                Calculator.CountPeanutMandMs(unit, height, width, length);
+            });
         }
 
         #endregion
@@ -236,22 +221,16 @@ namespace MandMCounter.Tests
         [TestMethod]
         public void CountPeanutMandMsInACylinderWithNullUnitTest()
         {
-            try
-            {
-                //Arrange
-                string unit = null;
-                float height = 10;
-                float radius = 5;
+            //Arrange
+            string unit = null;
+            float height = 10;
+            float radius = 5;
 
-                //Act
-                
-                float result = Calculator.CountPeanutMandMs(unit, height, radius);
-            }
-            catch (Exception ex)
+            //Act & Assert
+            Assert.Throws<Exception>(() =>
             {
-                //Assert
-                Assert.IsTrue(ex != null);
-            }
+                Calculator.CountPeanutMandMs(unit, height, radius);
+            });
         }
 
         #endregion

@@ -11,7 +11,7 @@ namespace MandMCounter.Tests.Controllers
         #region "Testing units"       
 
         [TestMethod]
-        public void ControllerCountPeanutMandMsInAUSCupTest()
+        public void ControllerCountPeanutMandMsInAmericanCupTest()
         {
             //Arrange
             string unit = "Cup";
@@ -22,7 +22,7 @@ namespace MandMCounter.Tests.Controllers
             float result = controller.GetDataForUnit(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 181f);
+            Assert.AreEqual(181f, System.Math.Round(result, 0));
         }                
 
         #endregion
@@ -30,7 +30,7 @@ namespace MandMCounter.Tests.Controllers
         #region " Testing volume in a rectangle" 
 
         [TestMethod]
-        public void ControllerCountPeanutMandMsInA1CubicCMTest()
+        public void ControllerCountPeanutMandMsInA1000CubicCMTest()
         {
             //Arrange
             string unit = "cm";
@@ -43,7 +43,7 @@ namespace MandMCounter.Tests.Controllers
             float result = controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
-            Assert.IsTrue((int)System.Math.Round(result, 0) == (int)764f);
+            Assert.AreEqual(764, (int)System.Math.Round(result, 0));
         }      
 
         #endregion
@@ -63,7 +63,7 @@ namespace MandMCounter.Tests.Controllers
             float result = controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 600f);
+            Assert.AreEqual(600f, System.Math.Round(result, 0));
         }
 
         #endregion
