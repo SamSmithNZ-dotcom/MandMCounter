@@ -134,7 +134,7 @@ namespace MandMCounter.Tests
                 float quantity = 1;
 
                 //Act
-                float result = Calculator.CountMandMs(unit, quantity);
+                Calculator.CountMandMs(unit, quantity);
             }
             catch (Exception ex)
             {
