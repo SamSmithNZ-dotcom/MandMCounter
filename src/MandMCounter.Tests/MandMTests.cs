@@ -93,7 +93,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
-            Assert.AreEqual(63f, (float)System.Math.Round(result, 0), 0.1f);
+            Assert.AreEqual(63, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -107,7 +107,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
-            Assert.AreEqual(16f, (float)System.Math.Round(result, 0), 0.1f);
+            Assert.AreEqual(16, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
