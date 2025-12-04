@@ -124,7 +124,7 @@ namespace MandMCounter.Core
         {
             if (string.IsNullOrEmpty(unit))
             {
-                unit = "";
+                throw new ArgumentNullException(nameof(unit), "Unit cannot be null or empty.");
             }
 
             float baseCalculation = height * width * length;
@@ -152,7 +152,7 @@ namespace MandMCounter.Core
         {
             if (string.IsNullOrEmpty(unit))
             {
-                unit = "";
+                throw new ArgumentNullException(nameof(unit), "Unit cannot be null or empty.");
             }
 
             // radius ^ 2 * (pi) * height
