@@ -83,7 +83,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountPeanutMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 11f);
+            Assert.AreEqual(11, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -98,7 +98,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountPeanutMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 4f);
+            Assert.AreEqual(4, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -124,7 +124,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountPeanutMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 764f);
+            Assert.AreEqual(764, (int)Math.Round(result, 0));
         }
 
         #endregion
@@ -145,7 +145,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountPeanutMandMs(unit, height, width, length);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 764f);
+            Assert.AreEqual(764, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -162,7 +162,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountPeanutMandMs(unit, height, width, length);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 13f);
+            Assert.AreEqual(13, (int)Math.Round(result, 0));
         }
 
 
@@ -199,7 +199,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountPeanutMandMs(unit, height, radius);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 600f);
+            Assert.AreEqual(600, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -215,7 +215,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountPeanutMandMs(unit, height, radius);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 629f);
+            Assert.AreEqual(629, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
