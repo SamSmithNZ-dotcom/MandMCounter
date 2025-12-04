@@ -68,7 +68,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountPeanutMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 45f);
+            Assert.AreEqual(45, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
