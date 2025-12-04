@@ -85,7 +85,7 @@ namespace MandMCounter.Core
         {
             if (string.IsNullOrEmpty(unit))
             {
-                unit = "";
+                throw new ArgumentNullException(nameof(unit), "Unit cannot be null or empty.");
             }
 
             switch (unit.ToLower())
