@@ -48,7 +48,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 212f);
+            Assert.AreEqual(212, (int)Math.Round(result, 0));
         }
 
     }
