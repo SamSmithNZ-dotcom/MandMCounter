@@ -8,6 +8,14 @@ namespace MandMCounter.Tests.Controllers
     [TestClass]
     public class SkittleControllerTests
     {
+        private SkittleCounterController _controller;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            _controller = new SkittleCounterController();
+        }
+
         #region "Testing units"
 
         [TestMethod]
@@ -16,13 +24,15 @@ namespace MandMCounter.Tests.Controllers
             //Arrange
             string unit = "Cup";
             float quantity = 1f;
+            const float expectedSkittles = 212f;
+            const float tolerance = 0.0001f;
 
             //Act
-            SkittleCounterController controller = new SkittleCounterController();
-            float result = controller.GetDataForUnit(unit, quantity);
+            //SkittleCounterController controller = new SkittleCounterController();
+            float result = _controller.GetDataForUnit(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Abs(System.Math.Round(result, 0) - 212f) < 0.0001f);
+            Assert.AreEqual(expectedSkittles, System.Math.Round(result, 0), tolerance);
         }
 
         #endregion
@@ -39,11 +49,13 @@ namespace MandMCounter.Tests.Controllers
             float length = 10;
 
             //Act
-            SkittleCounterController controller = new SkittleCounterController();
-            float result = controller.GetDataForRectangle(unit, height, width, length);
+            //SkittleCounterController controller = new SkittleCounterController();
+            float result = _controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
-            Assert.IsTrue(System.Math.Abs(System.Math.Round(result, 0) - 896f) < 0.0001f);
+            const float expected = 896f;
+            const float delta = 0.0001f;
+            Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
         }
 
         #endregion
@@ -59,8 +71,8 @@ namespace MandMCounter.Tests.Controllers
             float radius = 5;
 
             //Act
-            SkittleCounterController controller = new SkittleCounterController();
-            float result = controller.GetDataForCylinder(unit, height, radius);
+            //SkittleCounterController controller = new SkittleCounterController();
+            float result = _controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
             Assert.IsTrue(System.Math.Abs(System.Math.Round(result, 0) - 704f) < 0.0001f);
