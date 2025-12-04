@@ -21,7 +21,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 4047f);
+            Assert.AreEqual(4047f, (float)System.Math.Round(result, 0), 0.1f);
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 1012f);
+            Assert.AreEqual(1012f, (float)System.Math.Round(result, 0), 0.1f);
         }
 
         [TestMethod]
@@ -49,7 +49,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 32f);
+            Assert.AreEqual(32f, (float)System.Math.Round(result, 0), 0.1f);
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 339973f);
+            Assert.AreEqual(339973f, (float)System.Math.Round(result, 0), 0.1f);
         }
 
 
@@ -78,7 +78,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 253f);
+            Assert.AreEqual(253f, (float)System.Math.Round(result, 0), 0.1f);
         }
 
 
@@ -93,7 +93,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 63f);
+            Assert.AreEqual(63f, (float)System.Math.Round(result, 0), 0.1f);
         }
 
         [TestMethod]
@@ -107,7 +107,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountMandMs(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 16f);
+            Assert.AreEqual(16f, (float)System.Math.Round(result, 0), 0.1f);
         }
 
         [TestMethod]
