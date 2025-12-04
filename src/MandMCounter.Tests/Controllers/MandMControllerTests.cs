@@ -22,7 +22,7 @@ namespace MandMCounter.Tests.Controllers
             float result = controller.GetDataForUnit(unit, quantity);
             
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 253f);
+            Assert.IsTrue(Math.Abs(System.Math.Round(result, 0) - 253f) < 0.5);
         }     
 
         #endregion
@@ -43,7 +43,7 @@ namespace MandMCounter.Tests.Controllers
             float result = controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 1069f);
+            Assert.IsTrue(Math.Abs(System.Math.Round(result, 0) - 1069f) < 0.5);
         }        
 
         #endregion
@@ -63,7 +63,7 @@ namespace MandMCounter.Tests.Controllers
             float result = controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 840f);
+            Assert.IsTrue(Math.Abs(System.Math.Round(result, 0) - 840f) < 0.5);
         }      
 
         #endregion
