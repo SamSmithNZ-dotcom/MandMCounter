@@ -22,7 +22,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 3393f);
+            Assert.AreEqual(3393, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 848f);
+            Assert.AreEqual(848, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -52,7 +52,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 212f);
+            Assert.AreEqual(212, (int)Math.Round(result, 0));
         }
 
 
@@ -68,7 +68,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 53f);
+            Assert.AreEqual(53, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -83,7 +83,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 13f);
+            Assert.AreEqual(13, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -98,7 +98,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 4f);
+            Assert.AreEqual(4, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -124,7 +124,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountSkittles(unit, quantity);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 896f);
+            Assert.AreEqual(896, (int)Math.Round(result, 0));
         }
 
         #endregion
@@ -145,7 +145,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountSkittles(unit, height, width, length);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 896f);
+            Assert.AreEqual(896, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -162,7 +162,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountSkittles(unit, height, width, length);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 15f);
+            Assert.AreEqual(15, (int)Math.Round(result, 0));
         }
 
 
@@ -194,7 +194,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountSkittles(unit, height, radius);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 704f);
+            Assert.AreEqual(704, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
@@ -210,7 +210,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountSkittles(unit, height, radius);
 
             //Assert
-            Assert.IsTrue(System.Math.Round(result, 0) == 738f);
+            Assert.AreEqual(738, (int)Math.Round(result, 0));
         }
 
         [TestMethod]
