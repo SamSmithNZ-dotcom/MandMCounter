@@ -329,7 +329,7 @@ namespace MandMCounter.Tests
                 float radius = 5;
 
                 //Act
-                float result = Calculator.CountMandMs(unit, height, radius);
+                Calculator.CountMandMs(unit, height, radius);
             }
             catch (Exception ex)
             {
