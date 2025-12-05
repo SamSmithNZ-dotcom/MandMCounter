@@ -1,12 +1,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MandMCounter.Core;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MandMCounter.Tests
 {
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     [TestClass]
-    public class UnitsTests
+    public class UnitTests
     {
         [TestMethod]
         public void GetUnitsForVolumeTest()
@@ -19,7 +20,7 @@ namespace MandMCounter.Tests
             //Assert
             Assert.IsNotNull(results);
             Assert.IsTrue(results.Count > 0);
-            Assert.IsFalse(string.IsNullOrEmpty(results[0]));
+            Assert.IsFalse(results.Any(s => string.IsNullOrEmpty(s)));
         }
 
         [TestMethod]
@@ -33,7 +34,7 @@ namespace MandMCounter.Tests
             //Assert
             Assert.IsNotNull(results);
             Assert.IsTrue(results.Count > 0);
-            Assert.IsFalse(string.IsNullOrEmpty(results[0]));
+            Assert.IsFalse(results.Any(s => string.IsNullOrEmpty(s)));
         }
 
 
