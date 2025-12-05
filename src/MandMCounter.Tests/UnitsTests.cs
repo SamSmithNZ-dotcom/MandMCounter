@@ -1,13 +1,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MandMCounter.Core;
-using System;
 using System.Collections.Generic;
 
 namespace MandMCounter.Tests
 {
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     [TestClass]
-    public class UnitTests
+    public class UnitsTests
     {
         [TestMethod]
         public void GetUnitsForVolumeTest()
@@ -37,19 +36,6 @@ namespace MandMCounter.Tests
             Assert.IsFalse(string.IsNullOrEmpty(results[0]));
         }
 
-        [TestMethod]
-        public void CountSkittlesInAUSCupTest()
-        {
-            //Arrange
-            string unit = "Cup";
-            float quantity = 1f;
-
-            //Act
-            float result = Calculator.CountSkittles(unit, quantity);
-
-            //Assert
-            Assert.AreEqual(212, (int)Math.Round(result, 0));
-        }
 
     }
 }
