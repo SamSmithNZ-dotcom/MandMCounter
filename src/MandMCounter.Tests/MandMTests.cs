@@ -230,7 +230,7 @@ namespace MandMCounter.Tests
                 float length = 1;
 
                 //Act
-                float result = Calculator.CountMandMs(unit, height, width, length);
+                Calculator.CountMandMs(unit, height, width, length);
             }
             catch (Exception ex)
             {
