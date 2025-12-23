@@ -18,7 +18,7 @@ namespace MandMCounter.Tests
 
             //Assert
             Assert.IsNotNull(results);
-            Assert.IsTrue(results.Count > 0);
+            Assert.IsNotEmpty(results);
             Assert.IsFalse(string.IsNullOrEmpty(results[0]));
         }
 
@@ -32,7 +32,7 @@ namespace MandMCounter.Tests
 
             //Assert
             Assert.IsNotNull(results);
-            Assert.IsTrue(results.Count > 0);
+            Assert.IsNotEmpty(results);
             Assert.IsFalse(string.IsNullOrEmpty(results[0]));
         }
 
