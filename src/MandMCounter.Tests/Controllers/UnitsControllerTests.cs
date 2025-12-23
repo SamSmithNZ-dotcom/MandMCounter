@@ -1,6 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MandMCounter.Service.Controllers;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
 namespace MandMCounter.Tests
@@ -19,9 +18,9 @@ namespace MandMCounter.Tests
             List<string> results = controller.GetUnitsForVolume();
 
             //Assert
-            Assert.IsTrue(results != null);
-            Assert.IsTrue(results.Count > 0);
-            Assert.IsTrue(string.IsNullOrEmpty(results[0]) == false);
+            Assert.IsNotNull(results);
+            Assert.IsNotEmpty(results);
+            Assert.IsFalse(string.IsNullOrEmpty(results[0]));
         }
 
         [TestMethod]
@@ -34,9 +33,9 @@ namespace MandMCounter.Tests
             List<string> results = controller.GetUnitsForContainer();
 
             //Assert
-            Assert.IsTrue(results != null);
-            Assert.IsTrue(results.Count > 0);
-            Assert.IsTrue(string.IsNullOrEmpty(results[0]) == false);
+            Assert.IsNotNull(results);
+            Assert.IsNotEmpty(results);
+            Assert.IsFalse(string.IsNullOrEmpty(results[0]));
         }
     }
 }
