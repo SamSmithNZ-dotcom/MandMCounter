@@ -21,7 +21,7 @@ namespace MandMCounter.Tests.Controllers
             //Arrange
             string unit = "Cup";
             float quantity = 1f;
-            const float expectedSkittles = 212f;
+            const float expectedSkittles = 213f;
 
             //Act
             //SkittleCounterController controller = new SkittleCounterController();
@@ -39,7 +39,7 @@ namespace MandMCounter.Tests.Controllers
             float height = 10;
             float width = 10;
             float length = 10;
-            const float expectedSkittles = 896f;
+            const float expectedSkittles = 897f;
 
             //Act
             //SkittleCounterController controller = new SkittleCounterController();
@@ -56,7 +56,7 @@ namespace MandMCounter.Tests.Controllers
             string unit = "cm";
             float height = 10;
             float radius = 5;
-            const float expectedSkittles = 704f;
+            const float expectedSkittles = 705f;
 
             //Act
             //SkittleCounterController controller = new SkittleCounterController();

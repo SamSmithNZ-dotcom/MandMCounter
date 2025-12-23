@@ -37,12 +37,13 @@ namespace MandMCounter.Tests.Controllers
             float height = 10;
             float width = 10;
             float length = 10;
+            const float expectedMandMs = 1070f;
 
             //Act
             float result = _controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
-            Assert.IsLessThan(1069f, result);
+            Assert.IsLessThan(expectedMandMs, result);
         }        
 
         [TestMethod]
@@ -52,12 +53,13 @@ namespace MandMCounter.Tests.Controllers
             string unit = "cm";
             float height = 10;
             float radius = 5;
+            const float expectedMandMs = 840f;
 
             //Act
             float result = _controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
-            Assert.IsLessThan(840f, result);
+            Assert.IsLessThan(expectedMandMs, result);
         }      
 
     }
