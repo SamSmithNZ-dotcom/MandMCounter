@@ -19,7 +19,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(8558f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(685.82, Math.Round(result, 2), 0.01);
         }
 
         [TestMethod]
@@ -33,7 +33,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(2140f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(171.46, Math.Round(result, 2), 0.01);
         }
 
         [TestMethod]
@@ -47,7 +47,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(535f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(42.86, Math.Round(result, 2), 0.01);
         }
 
 
@@ -63,7 +63,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(134f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(10.72, Math.Round(result, 2), 0.01);
         }
 
         [TestMethod]
@@ -78,7 +78,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(33f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(2.68, Math.Round(result, 2), 0.01);
         }
 
         [TestMethod]
@@ -93,7 +93,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(11f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(0.89, Math.Round(result, 2), 0.01);
         }
 
         [TestMethod]
@@ -119,7 +119,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(2260f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(181.17, Math.Round(result, 2), 0.01);
         }
 
         [TestMethod]
@@ -136,7 +136,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, height, width, length);
 
             //Assert
-            Assert.AreEqual(2260f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(181.17, Math.Round(result, 2), 0.01);
         }
 
         [TestMethod]
@@ -153,7 +153,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, height, width, length);
 
             //Assert
-            Assert.AreEqual(37f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(2.97, Math.Round(result, 2), 0.01);
         }
 
 
@@ -183,7 +183,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, height, radius);
 
             //Assert
-            Assert.AreEqual(1777f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(142.29, Math.Round(result, 2), 0.01);
         }
 
         [TestMethod]
@@ -199,7 +199,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, height, radius);
 
             //Assert
-            Assert.AreEqual(1862f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(149.23, Math.Round(result, 2), 0.01);
         }
 
         [TestMethod]
