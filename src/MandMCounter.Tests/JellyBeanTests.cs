@@ -8,8 +8,6 @@ namespace MandMCounter.Tests
     [TestClass]
     public class JellyBeanTests
     {
-        #region " Testing units"
-
         [TestMethod]
         public void CountJellyBeansInAUSGallonTest()
         {
@@ -124,10 +122,6 @@ namespace MandMCounter.Tests
             Assert.AreEqual(2260f, System.Math.Round(result, 0), 1f);
         }
 
-        #endregion
-
-        #region " Testing volume in a rectangle" 
-
         [TestMethod]
         public void CountJellyBeansInA1CubicCMTest()
         {
@@ -176,10 +170,6 @@ namespace MandMCounter.Tests
             Assert.Throws<ArgumentNullException>(() => Calculator.CountJellyBeans(unit, height, width, length));
         }
 
-        #endregion
-
-        #region " Testing volume in a cylinder" 
-
         [TestMethod]
         public void CountJellyBeansInACylinderWithCMTest()
         {
@@ -223,8 +213,6 @@ namespace MandMCounter.Tests
             //Act & Assert
             Assert.Throws<ArgumentNullException>(() => Calculator.CountJellyBeans(unit, height, radius));
         }
-
-        #endregion
 
     }
 }

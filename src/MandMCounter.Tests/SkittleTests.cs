@@ -8,8 +8,6 @@ namespace MandMCounter.Tests
     [TestClass]
     public class SkittleTests
     {
-        #region " Testing units"
-
         [TestMethod]
         public void CountSkittlesInAUSGallonTest()
         {
@@ -124,10 +122,6 @@ namespace MandMCounter.Tests
             Assert.AreEqual(896f, System.Math.Round(result, 0), 1f);
         }
 
-        #endregion
-
-        #region " Testing volume in a rectangle" 
-
         [TestMethod]
         public void CountSkittlesInA1CubicCMTest()
         {
@@ -178,10 +172,6 @@ namespace MandMCounter.Tests
             Assert.Throws<ArgumentNullException>(() => Calculator.CountSkittles(unit, height, width, length));
         }
 
-        #endregion
-
-        #region " Testing volume in a cylinder" 
-
         [TestMethod]
         public void CountSkittlesInACylinderWithCMTest()
         {
@@ -225,8 +215,6 @@ namespace MandMCounter.Tests
             //Act & Assert
             Assert.Throws<ArgumentNullException>(() => Calculator.CountSkittles(unit, height, radius));
         }
-
-        #endregion
 
     }
 }

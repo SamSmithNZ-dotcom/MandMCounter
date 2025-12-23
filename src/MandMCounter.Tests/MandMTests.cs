@@ -8,8 +8,6 @@ namespace MandMCounter.Tests
     [TestClass]
     public class MandMTests
     {
-        #region " Testing units"
-
         [TestMethod]
         public void CountMandMsInAUSGallonTest()
         {
@@ -149,10 +147,6 @@ namespace MandMCounter.Tests
             Assert.AreEqual(1069, (int)Math.Round(result, 0));
         }
 
-        #endregion
-
-        #region " Testing volume in a rectangle" 
-
         [TestMethod]
         public void CountMandMsInA1CubicCMTest()
         {
@@ -238,10 +232,6 @@ namespace MandMCounter.Tests
                 Assert.IsTrue(ex != null);
             }
         }
-
-        #endregion
-
-        #region " Testing volume in a cylinder" 
 
         [TestMethod]
         public void CountMandMsInACylinderWithCMTest()
@@ -337,8 +327,6 @@ namespace MandMCounter.Tests
                 Assert.IsTrue(ex != null);
             }
         }
-
-        #endregion
 
     }
 }

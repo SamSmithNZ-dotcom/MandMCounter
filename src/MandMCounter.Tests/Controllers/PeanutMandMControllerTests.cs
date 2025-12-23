@@ -8,8 +8,6 @@ namespace MandMCounter.Tests.Controllers
     [TestClass]
     public class PeanutMandMControllerTests
     {
-        #region "Testing units"       
-
         [TestMethod]
         public void ControllerCountPeanutMandMsInAmericanCupTest()
         {
@@ -24,10 +22,6 @@ namespace MandMCounter.Tests.Controllers
             //Assert
             Assert.AreEqual(181f, System.Math.Round(result, 0));
         }                
-
-        #endregion
-
-        #region " Testing volume in a rectangle" 
 
         [TestMethod]
         public void ControllerCountPeanutMandMsInA1000CubicCMTest()
@@ -46,10 +40,6 @@ namespace MandMCounter.Tests.Controllers
             Assert.AreEqual(764, (int)System.Math.Round(result, 0));
         }      
 
-        #endregion
-
-        #region " Testing volume in a cylinder" 
-
         [TestMethod]
         public void ControllerCountPeanutMandMsInACylinderWithCMTest()
         {
@@ -65,8 +55,6 @@ namespace MandMCounter.Tests.Controllers
             //Assert
             Assert.AreEqual(600f, System.Math.Round(result, 0));
         }
-
-        #endregion
 
     }
 }

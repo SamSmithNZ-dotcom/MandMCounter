@@ -8,8 +8,6 @@ namespace MandMCounter.Tests
     [TestClass]
     public class PeanutMandMTests
     {
-        #region " Testing units"
-
         [TestMethod]
         public void CountPeanutMandMsInAUSGallonTest()
         {
@@ -127,10 +125,6 @@ namespace MandMCounter.Tests
             Assert.AreEqual(764, (int)Math.Round(result, 0));
         }
 
-        #endregion
-
-        #region " Testing volume in a rectangle" 
-
         [TestMethod]
         public void CountPeanutMandMsInA1CubicCMTest()
         {
@@ -182,10 +176,6 @@ namespace MandMCounter.Tests
             });
         }
 
-        #endregion
-
-        #region " Testing volume in a cylinder" 
-
         [TestMethod]
         public void CountPeanutMandMsInACylinderWithCMTest()
         {
@@ -232,8 +222,6 @@ namespace MandMCounter.Tests
                 Calculator.CountPeanutMandMs(unit, height, radius);
             });
         }
-
-        #endregion
 
     }
 }

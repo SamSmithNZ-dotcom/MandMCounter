@@ -1,6 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MandMCounter.Service.Controllers;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MandMCounter.Tests.Controllers
 {
@@ -15,8 +14,6 @@ namespace MandMCounter.Tests.Controllers
         {
             _controller = new JellyBeanCounterController();
         }
-
-        #region "Testing units"
 
         [TestMethod]
         public void ControllerCountJellyBeansInAUSGallonTest()
@@ -98,10 +95,6 @@ namespace MandMCounter.Tests.Controllers
             Assert.AreEqual(expectedJellyBeans, System.Math.Round(result, 0), tolerance);
         }
 
-        #endregion
-
-        #region " Testing volume in a rectangle" 
-
         [TestMethod]
         public void ControllerCountJellyBeansInA1CubicCMTest()
         {
@@ -138,10 +131,6 @@ namespace MandMCounter.Tests.Controllers
             Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
         }
 
-        #endregion
-
-        #region " Testing volume in a cylinder" 
-
         [TestMethod]
         public void ControllerCountJellyBeansInACylinderWithCMTest()
         {
@@ -175,8 +164,6 @@ namespace MandMCounter.Tests.Controllers
             const float delta = 0.0001f;
             Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
         }
-
-        #endregion
 
     }
 }

@@ -16,8 +16,6 @@ namespace MandMCounter.Tests.Controllers
             _controller = new SkittleCounterController();
         }
 
-        #region "Testing units"
-
         [TestMethod]
         public void ControllerCountSkittlesInAUSCupTest()
         {
@@ -34,10 +32,6 @@ namespace MandMCounter.Tests.Controllers
             //Assert
             Assert.AreEqual(expectedSkittles, System.Math.Round(result, 0), tolerance);
         }
-
-        #endregion
-
-        #region " Testing volume in a rectangle" 
 
         [TestMethod]
         public void ControllerCountSkittlesInA1CubicCMTest()
@@ -58,10 +52,6 @@ namespace MandMCounter.Tests.Controllers
             Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
         }
 
-        #endregion
-
-        #region " Testing volume in a cylinder" 
-
         [TestMethod]
         public void ControllerCountSkittlesInACylinderWithCMTest()
         {
@@ -79,8 +69,6 @@ namespace MandMCounter.Tests.Controllers
             const float delta = 0.0001f;
             Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
         }
-
-        #endregion
 
     }
 }

@@ -8,8 +8,6 @@ namespace MandMCounter.Tests.Controllers
     [TestClass]
     public class MandMControllerTests
     {
-        #region "Testing units"
-
         [TestMethod]
         public void ControllerCountMandMsInAUSGallonTest()
         {
@@ -24,10 +22,6 @@ namespace MandMCounter.Tests.Controllers
             //Assert
             Assert.IsLessThan(0.5, Math.Abs(System.Math.Round(result, 0) - 253f));
         }     
-
-        #endregion
-
-        #region " Testing volume in a rectangle" 
 
         [TestMethod]
         public void ControllerCountMandMsInA1CubicCMTest()
@@ -46,10 +40,6 @@ namespace MandMCounter.Tests.Controllers
             Assert.IsLessThan(0.5, Math.Abs(System.Math.Round(result, 0) - 1069f));
         }        
 
-        #endregion
-
-        #region " Testing volume in a cylinder" 
-
         [TestMethod]
         public void ControllerCountMandMsInACylinderWithCMTest()
         {
@@ -65,8 +55,6 @@ namespace MandMCounter.Tests.Controllers
             //Assert
             Assert.IsLessThan(0.5, Math.Abs(System.Math.Round(result, 0) - 840f));
         }      
-
-        #endregion
 
     }
 }
