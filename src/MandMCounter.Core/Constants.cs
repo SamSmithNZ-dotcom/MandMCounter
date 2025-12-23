@@ -11,6 +11,8 @@ namespace MandMCounter.Core
         //Reference: this one thinks it's 0.625f http://www.answers.com/Q/What_is_a_volume_of_one_skittle
         //Reference 2: this one thinks it's  0.7418629f https://community.babycenter.com/post/a37375396/guess_how_many_skittles?cpg=2
         public const float SkittlesVolumeCubicCm = 0.7418629f; //Going with the bigger number, as skittles are bigger than M&Ms
+        //Reference: Volume of a jellybean is 3.5325, so the volume in one cubic CM is 1/3.5325 = 0.2831
+        public const float JellyBeansVolumeCubicCm = 0.2831f;
 
         //Reference: https://yenra.com/particle-packing/
         //Some people think this is 68.5%. https://cims.nyu.edu/~donev/Thesis.pdf
@@ -19,6 +21,8 @@ namespace MandMCounter.Core
         public const float PeanutMandMSDensityPercent = 0.64f;
         //Reference: https://community.babycenter.com/post/a37375396/guess_how_many_skittles?cpg=2
         public const float SkittlesDensityPercent = 0.665f; //This feels right too, as skittles are more round than an M&M
+        //Reference: https://www.pearson.com/channels/physics/asset/9b2fde72/ii-estimate-the-number-of-jelly-beans-in-the-jar-of-fig-113-and-ltimage-and-gt
+        public const float JellyBeansDensityPercent = 0.64f;
 
         //Conversions done using Google conversion calculater
         public const float USGallonToCubicCM = 3785.4119997685f;

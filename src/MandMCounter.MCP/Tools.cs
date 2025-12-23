@@ -45,6 +45,20 @@ namespace MandMCounter.MCP
         public static float GetDataForCylinder(string unit, float height, float radius) => Calculator.CountSkittles(unit, height, radius);
     }
 
+    // MCP tool for Jelly Bean counting
+    [McpServerToolType]
+    public class JellyBeanCounterTool
+    {
+        [McpServerTool]
+        public static float GetDataForUnit(string unit, float quantity) => Calculator.CountJellyBeans(unit, quantity);
+
+        [McpServerTool]
+        public static float GetDataForRectangle(string unit, float height, float width, float length) => Calculator.CountJellyBeans(unit, height, width, length);
+
+        [McpServerTool]
+        public static float GetDataForCylinder(string unit, float height, float radius) => Calculator.CountJellyBeans(unit, height, radius);
+    }
+
     // MCP tool for units
     [McpServerToolType]
     public class UnitsTool

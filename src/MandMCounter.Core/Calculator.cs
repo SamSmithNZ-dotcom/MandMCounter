@@ -30,6 +30,12 @@ namespace MandMCounter.Core
             return numberOfMandMs;
         }
 
+        public static float CountJellyBeans(string unit, float quantity)
+        {
+            float numberOfJellyBeans = GetCubicCmForVolume(unit, quantity) * Constants.JellyBeansDensityPercent / Constants.JellyBeansVolumeCubicCm;
+            return numberOfJellyBeans;
+        }
+
         /// <summary>
         /// To count the number of M&Ms in a container based on rectangular container
         /// </summary>
@@ -56,6 +62,12 @@ namespace MandMCounter.Core
             return numberOfMandMs;
         }
 
+        public static float CountJellyBeans(string unit, float height, float width, float length)
+        {
+            float numberOfJellyBeans = GetCubicCmForRectangle(unit, height, width, length) * Constants.JellyBeansDensityPercent / Constants.JellyBeansVolumeCubicCm;
+            return numberOfJellyBeans;
+        }
+
         /// <summary>
         /// To count the number of M&Ms in a container based on rectangular container
         /// </summary>
@@ -79,6 +91,12 @@ namespace MandMCounter.Core
         {
             float numberOfMandMs = GetCubicCmForCylinder(unit, height, radius) * Constants.SkittlesDensityPercent / Constants.SkittlesVolumeCubicCm;
             return numberOfMandMs;
+        }
+
+        public static float CountJellyBeans(string unit, float height, float radius)
+        {
+            float numberOfJellyBeans = GetCubicCmForCylinder(unit, height, radius) * Constants.JellyBeansDensityPercent / Constants.JellyBeansVolumeCubicCm;
+            return numberOfJellyBeans;
         }
 
         private static float GetCubicCmForVolume(string unit, float quantity)
