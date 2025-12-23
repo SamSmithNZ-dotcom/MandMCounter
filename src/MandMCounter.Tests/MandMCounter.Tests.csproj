@@ -2,16 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
     <DebugType>Full</DebugType>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Controllers\**" />
-    <EmbeddedResource Remove="Controllers\**" />
-    <None Remove="Controllers\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="coverlet.msbuild" Version="6.0.4">
@@ -26,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MandMCounter.Core\MandMCounter.Core.csproj" />
+    <ProjectReference Include="..\MandMCounter.Service\MandMCounter.Service.csproj" />
   </ItemGroup>
 
 </Project>

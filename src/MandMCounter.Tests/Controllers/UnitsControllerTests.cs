@@ -1,27 +1,33 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MandMCounter.Service.Controllers;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace MandMCounter.Tests
+namespace MandMCounter.Tests.Controllers
 {
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     [TestClass]
     public class UnitsControllerTests
     {
+        private UnitsController _controller;
+ 
+        [TestInitialize]
+        public void Setup()
+        {
+            _controller = new();
+        }
+
         [TestMethod]
         public void GetUnitsForVolumeTest()
         {
             //Arrange
 
             //Act
-            UnitsController controller = new UnitsController();
-            List<string> results = controller.GetUnitsForVolume();
+            List<string> results = _controller.GetUnitsForVolume();
 
             //Assert
-            Assert.IsTrue(results != null);
-            Assert.IsTrue(results.Count > 0);
-            Assert.IsTrue(string.IsNullOrEmpty(results[0]) == false);
+            Assert.IsNotNull(results);
+            Assert.IsNotEmpty(results);
+            Assert.IsFalse(string.IsNullOrEmpty(results[0]));
         }
 
         [TestMethod]
@@ -30,13 +36,12 @@ namespace MandMCounter.Tests
             //Arrange
 
             //Act
-            UnitsController controller = new UnitsController();
-            List<string> results = controller.GetUnitsForContainer();
+            List<string> results = _controller.GetUnitsForContainer();
 
             //Assert
-            Assert.IsTrue(results != null);
-            Assert.IsTrue(results.Count > 0);
-            Assert.IsTrue(string.IsNullOrEmpty(results[0]) == false);
+            Assert.IsNotNull(results);
+            Assert.IsNotEmpty(results);
+            Assert.IsFalse(string.IsNullOrEmpty(results[0]));
         }
     }
 }

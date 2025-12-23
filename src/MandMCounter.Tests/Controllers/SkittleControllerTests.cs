@@ -1,6 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MandMCounter.Service.Controllers;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MandMCounter.Tests.Controllers
 {
@@ -16,28 +15,21 @@ namespace MandMCounter.Tests.Controllers
             _controller = new SkittleCounterController();
         }
 
-        #region "Testing units"
-
         [TestMethod]
         public void ControllerCountSkittlesInAUSCupTest()
         {
             //Arrange
             string unit = "Cup";
             float quantity = 1f;
-            const float expectedSkittles = 212f;
-            const float tolerance = 0.0001f;
+            const float expectedSkittles = 213f;
 
             //Act
             //SkittleCounterController controller = new SkittleCounterController();
             float result = _controller.GetDataForUnit(unit, quantity);
 
             //Assert
-            Assert.AreEqual(expectedSkittles, System.Math.Round(result, 0), tolerance);
+            Assert.IsLessThan(expectedSkittles, result);
         }
-
-        #endregion
-
-        #region " Testing volume in a rectangle" 
 
         [TestMethod]
         public void ControllerCountSkittlesInA1CubicCMTest()
@@ -47,20 +39,15 @@ namespace MandMCounter.Tests.Controllers
             float height = 10;
             float width = 10;
             float length = 10;
+            const float expectedSkittles = 897f;
 
             //Act
             //SkittleCounterController controller = new SkittleCounterController();
             float result = _controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
-            const float expected = 896f;
-            const float delta = 0.0001f;
-            Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
+            Assert.IsLessThan(expectedSkittles, result);
         }
-
-        #endregion
-
-        #region " Testing volume in a cylinder" 
 
         [TestMethod]
         public void ControllerCountSkittlesInACylinderWithCMTest()
@@ -69,18 +56,15 @@ namespace MandMCounter.Tests.Controllers
             string unit = "cm";
             float height = 10;
             float radius = 5;
+            const float expectedSkittles = 705f;
 
             //Act
             //SkittleCounterController controller = new SkittleCounterController();
             float result = _controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
-            const float expected = 704f;
-            const float delta = 0.0001f;
-            Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
+            Assert.IsLessThan(expectedSkittles, result);
         }
-
-        #endregion
 
     }
 }

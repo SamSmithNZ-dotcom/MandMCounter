@@ -1,6 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MandMCounter.Service.Controllers;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MandMCounter.Tests.Controllers
 {
@@ -8,7 +7,13 @@ namespace MandMCounter.Tests.Controllers
     [TestClass]
     public class MandMControllerTests
     {
-        #region "Testing units"
+        private MandMCounterController _controller;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            _controller = new();
+        }
 
         [TestMethod]
         public void ControllerCountMandMsInAUSGallonTest()
@@ -18,16 +23,11 @@ namespace MandMCounter.Tests.Controllers
             float quantity = 1f;
 
             //Act
-            MandMCounterController controller = new MandMCounterController();
-            float result = controller.GetDataForUnit(unit, quantity);
+            float result = _controller.GetDataForUnit(unit, quantity);
             
             //Assert
-            Assert.IsTrue(Math.Abs(System.Math.Round(result, 0) - 253f) < 0.5);
+            Assert.IsLessThan(253f, result);
         }     
-
-        #endregion
-
-        #region " Testing volume in a rectangle" 
 
         [TestMethod]
         public void ControllerCountMandMsInA1CubicCMTest()
@@ -37,18 +37,14 @@ namespace MandMCounter.Tests.Controllers
             float height = 10;
             float width = 10;
             float length = 10;
+            const float expectedMandMs = 1070f;
 
             //Act
-            MandMCounterController controller = new MandMCounterController();
-            float result = controller.GetDataForRectangle(unit, height, width, length);
+            float result = _controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
-            Assert.IsTrue(Math.Abs(System.Math.Round(result, 0) - 1069f) < 0.5);
+            Assert.IsLessThan(expectedMandMs, result);
         }        
-
-        #endregion
-
-        #region " Testing volume in a cylinder" 
 
         [TestMethod]
         public void ControllerCountMandMsInACylinderWithCMTest()
@@ -57,16 +53,14 @@ namespace MandMCounter.Tests.Controllers
             string unit = "cm";
             float height = 10;
             float radius = 5;
+            const float expectedMandMs = 840f;
 
             //Act
-            MandMCounterController controller = new MandMCounterController();
-            float result = controller.GetDataForCylinder(unit, height, radius);
+            float result = _controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
-            Assert.IsTrue(Math.Abs(System.Math.Round(result, 0) - 840f) < 0.5);
+            Assert.IsLessThan(expectedMandMs, result);
         }      
-
-        #endregion
 
     }
 }

@@ -6,56 +6,53 @@ namespace MandMCounter.Tests
 {
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     [TestClass]
-    public class PeanutMandMTests
+    public class JellyBeanTests
     {
         [TestMethod]
-        public void CountPeanutMandMsInAUSGallonTest()
+        public void CountJellyBeansInAUSGallonTest()
         {
             //Arrange
             string unit = "Gallon";
             float quantity = 1f;
 
             //Act
-            
-            float result = Calculator.CountPeanutMandMs(unit, quantity);
+            float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(2892, (int)System.Math.Round(result, 0));
+            Assert.AreEqual(8558f, System.Math.Round(result, 0), 1f);
         }
 
         [TestMethod]
-        public void CountPeanutMandMsInAUSQuartTest()
+        public void CountJellyBeansInAUSQuartTest()
         {
             //Arrange
             string unit = "Quart";
-            float quantity = 2f;
+            float quantity = 1f;
 
             //Act
-            
-            float result = Calculator.CountPeanutMandMs(unit, quantity);
+            float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(1446, (int)System.Math.Round(result, 0));
+            Assert.AreEqual(2140f, System.Math.Round(result, 0), 1f);
         }
 
         [TestMethod]
-        public void CountPeanutMandMsInAUSCupTest()
+        public void CountJellyBeansInAUSCupTest()
         {
             //Arrange
             string unit = "Cup";
             float quantity = 1f;
 
             //Act
-            
-            float result = Calculator.CountPeanutMandMs(unit, quantity);
+            float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(181, (int)System.Math.Round(result, 0));
+            Assert.AreEqual(535f, System.Math.Round(result, 0), 1f);
         }
 
 
         [TestMethod]
-        public void CountPeanutMandMsInAUSQuarterCupTest()
+        public void CountJellyBeansInAUSQuarterCupTest()
         {
             //Arrange
             string unit = "Cup";
@@ -63,14 +60,14 @@ namespace MandMCounter.Tests
 
             //Act
             
-            float result = Calculator.CountPeanutMandMs(unit, quantity);
+            float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(45, (int)Math.Round(result, 0));
+            Assert.AreEqual(134f, System.Math.Round(result, 0), 1f);
         }
 
         [TestMethod]
-        public void CountPeanutMandMsInAUSTableSpoonTest()
+        public void CountJellyBeansInAUSTableSpoonTest()
         {
             //Arrange
             string unit = "Tablespoon";
@@ -78,14 +75,14 @@ namespace MandMCounter.Tests
 
             //Act
             
-            float result = Calculator.CountPeanutMandMs(unit, quantity);
+            float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(11, (int)Math.Round(result, 0));
+            Assert.AreEqual(33f, System.Math.Round(result, 0), 1f);
         }
 
         [TestMethod]
-        public void CountPeanutMandMsInAUSTeaSpoonTest()
+        public void CountJellyBeansInAUSTeaSpoonTest()
         {
             //Arrange
             string unit = "Teaspoon";
@@ -93,40 +90,40 @@ namespace MandMCounter.Tests
 
             //Act
             
-            float result = Calculator.CountPeanutMandMs(unit, quantity);
+            float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(4, (int)Math.Round(result, 0));
+            Assert.AreEqual(11f, System.Math.Round(result, 0), 1f);
         }
 
         [TestMethod]
-        public void CountPeanutMandMsInANullUnitTest()
+        public void CountJellyBeansInANullUnitTest()
         {
             //Arrange
             string unit = null;
             float quantity = 1;
 
             //Act & Assert
-            Assert.Throws<Exception>(() => Calculator.CountPeanutMandMs(unit, quantity));
+            Assert.Throws<ArgumentNullException>(() => Calculator.CountJellyBeans(unit, quantity));
         }
 
         [TestMethod]
-        public void CountPeanutMandMsInA1LitreTest()
+        public void CountJellyBeansInA1LitreTest()
         {
             //Arrange
             string unit = "Liter";
-            float quantity = 1f; 
+            float quantity = 1f;
 
             //Act
             
-            float result = Calculator.CountPeanutMandMs(unit, quantity);
+            float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(764, (int)Math.Round(result, 0));
+            Assert.AreEqual(2260f, System.Math.Round(result, 0), 1f);
         }
 
         [TestMethod]
-        public void CountPeanutMandMsInA1CubicCMTest()
+        public void CountJellyBeansInA1CubicCMTest()
         {
             //Arrange
             string unit = "cm";
@@ -136,14 +133,14 @@ namespace MandMCounter.Tests
 
             //Act
             
-            float result = Calculator.CountPeanutMandMs(unit, height, width, length);
+            float result = Calculator.CountJellyBeans(unit, height, width, length);
 
             //Assert
-            Assert.AreEqual(764, (int)Math.Round(result, 0));
+            Assert.AreEqual(2260f, System.Math.Round(result, 0), 1f);
         }
 
         [TestMethod]
-        public void CountPeanutMandMsInA1CubicInchTest()
+        public void CountJellyBeansInA1CubicInchTest()
         {
             //Arrange
             string unit = "inch";
@@ -153,15 +150,15 @@ namespace MandMCounter.Tests
 
             //Act
             
-            float result = Calculator.CountPeanutMandMs(unit, height, width, length);
+            float result = Calculator.CountJellyBeans(unit, height, width, length);
 
             //Assert
-            Assert.AreEqual(13, (int)Math.Round(result, 0));
+            Assert.AreEqual(37f, System.Math.Round(result, 0), 1f);
         }
 
 
         [TestMethod]
-        public void CountPeanutMandMsInA1CubicNullUnitTest()
+        public void CountJellyBeansInA1CubicNullUnitTest()
         {
             //Arrange
             string unit = null;
@@ -170,14 +167,11 @@ namespace MandMCounter.Tests
             float length = 1;
 
             //Act & Assert
-            Assert.Throws<Exception>(() =>
-            {
-                Calculator.CountPeanutMandMs(unit, height, width, length);
-            });
+            Assert.Throws<ArgumentNullException>(() => Calculator.CountJellyBeans(unit, height, width, length));
         }
 
         [TestMethod]
-        public void CountPeanutMandMsInACylinderWithCMTest()
+        public void CountJellyBeansInACylinderWithCMTest()
         {
             //Arrange
             string unit = "cm";
@@ -186,14 +180,14 @@ namespace MandMCounter.Tests
 
             //Act
             
-            float result = Calculator.CountPeanutMandMs(unit, height, radius);
+            float result = Calculator.CountJellyBeans(unit, height, radius);
 
             //Assert
-            Assert.AreEqual(600, (int)Math.Round(result, 0));
+            Assert.AreEqual(1777f, System.Math.Round(result, 0), 1f);
         }
 
         [TestMethod]
-        public void CountPeanutMandMsInACylinderWithInchTest()
+        public void CountJellyBeansInACylinderWithInchTest()
         {
             //Arrange
             string unit = "inch";
@@ -202,14 +196,14 @@ namespace MandMCounter.Tests
 
             //Act
             
-            float result = Calculator.CountPeanutMandMs(unit, height, radius);
+            float result = Calculator.CountJellyBeans(unit, height, radius);
 
             //Assert
-            Assert.AreEqual(629, (int)Math.Round(result, 0));
+            Assert.AreEqual(1862f, System.Math.Round(result, 0), 1f);
         }
 
         [TestMethod]
-        public void CountPeanutMandMsInACylinderWithNullUnitTest()
+        public void CountJellyBeansInACylinderWithNullUnitTest()
         {
             //Arrange
             string unit = null;
@@ -217,10 +211,7 @@ namespace MandMCounter.Tests
             float radius = 5;
 
             //Act & Assert
-            Assert.Throws<Exception>(() =>
-            {
-                Calculator.CountPeanutMandMs(unit, height, radius);
-            });
+            Assert.Throws<ArgumentNullException>(() => Calculator.CountJellyBeans(unit, height, radius));
         }
 
     }

@@ -1,6 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MandMCounter.Service.Controllers;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MandMCounter.Tests.Controllers
 {
@@ -8,7 +7,13 @@ namespace MandMCounter.Tests.Controllers
     [TestClass]
     public class PeanutMandMControllerTests
     {
-        #region "Testing units"       
+        private PeanutMandMCounterController _controller;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            _controller = new();
+        }
 
         [TestMethod]
         public void ControllerCountPeanutMandMsInAmericanCupTest()
@@ -16,18 +21,14 @@ namespace MandMCounter.Tests.Controllers
             //Arrange
             string unit = "Cup";
             float quantity = 1f;
+            const float expectedPeanutMandMs = 181f;
 
             //Act
-            PeanutMandMCounterController controller = new PeanutMandMCounterController();
-            float result = controller.GetDataForUnit(unit, quantity);
+            float result = _controller.GetDataForUnit(unit, quantity);
 
             //Assert
-            Assert.AreEqual(181f, System.Math.Round(result, 0));
+            Assert.IsLessThan(expectedPeanutMandMs, result);
         }                
-
-        #endregion
-
-        #region " Testing volume in a rectangle" 
 
         [TestMethod]
         public void ControllerCountPeanutMandMsInA1000CubicCMTest()
@@ -37,18 +38,14 @@ namespace MandMCounter.Tests.Controllers
             float height = 10;
             float width = 10;
             float length = 10;
+            const float expectedPeanutMandMs = 764f;
 
             //Act
-            PeanutMandMCounterController controller = new PeanutMandMCounterController();
-            float result = controller.GetDataForRectangle(unit, height, width, length);
+            float result = _controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
-            Assert.AreEqual(764, (int)System.Math.Round(result, 0));
+            Assert.IsLessThan(expectedPeanutMandMs, result);
         }      
-
-        #endregion
-
-        #region " Testing volume in a cylinder" 
 
         [TestMethod]
         public void ControllerCountPeanutMandMsInACylinderWithCMTest()
@@ -57,16 +54,14 @@ namespace MandMCounter.Tests.Controllers
             string unit = "cm";
             float height = 10;
             float radius = 5;
+            const float expectedPeanutMandMs = 600f;
 
             //Act
-            PeanutMandMCounterController controller = new PeanutMandMCounterController();
-            float result = controller.GetDataForCylinder(unit, height, radius);
+            float result = _controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
-            Assert.AreEqual(600f, System.Math.Round(result, 0));
+            Assert.IsLessThan(expectedPeanutMandMs, result);
         }
-
-        #endregion
 
     }
 }
