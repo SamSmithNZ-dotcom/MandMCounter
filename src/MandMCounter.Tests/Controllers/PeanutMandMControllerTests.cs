@@ -1,6 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MandMCounter.Service.Controllers;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MandMCounter.Tests.Controllers
 {
@@ -8,6 +7,15 @@ namespace MandMCounter.Tests.Controllers
     [TestClass]
     public class PeanutMandMControllerTests
     {
+        private PeanutMandMCounterController _controller;
+        private const float _tolerance = 0.0001f;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            _controller = new();
+        }
+
         [TestMethod]
         public void ControllerCountPeanutMandMsInAmericanCupTest()
         {
@@ -16,8 +24,7 @@ namespace MandMCounter.Tests.Controllers
             float quantity = 1f;
 
             //Act
-            PeanutMandMCounterController controller = new PeanutMandMCounterController();
-            float result = controller.GetDataForUnit(unit, quantity);
+            float result = _controller.GetDataForUnit(unit, quantity);
 
             //Assert
             Assert.AreEqual(181f, System.Math.Round(result, 0));
@@ -33,8 +40,7 @@ namespace MandMCounter.Tests.Controllers
             float length = 10;
 
             //Act
-            PeanutMandMCounterController controller = new PeanutMandMCounterController();
-            float result = controller.GetDataForRectangle(unit, height, width, length);
+            float result = _controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
             Assert.AreEqual(764, (int)System.Math.Round(result, 0));
@@ -49,8 +55,7 @@ namespace MandMCounter.Tests.Controllers
             float radius = 5;
 
             //Act
-            PeanutMandMCounterController controller = new PeanutMandMCounterController();
-            float result = controller.GetDataForCylinder(unit, height, radius);
+            float result = _controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
             Assert.AreEqual(600f, System.Math.Round(result, 0));

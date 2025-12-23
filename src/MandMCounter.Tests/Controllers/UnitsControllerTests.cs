@@ -2,20 +2,27 @@ using MandMCounter.Service.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace MandMCounter.Tests
+namespace MandMCounter.Tests.Controllers
 {
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     [TestClass]
     public class UnitsControllerTests
     {
+        private UnitsController _controller;
+ 
+        [TestInitialize]
+        public void Setup()
+        {
+            _controller = new();
+        }
+
         [TestMethod]
         public void GetUnitsForVolumeTest()
         {
             //Arrange
 
             //Act
-            UnitsController controller = new UnitsController();
-            List<string> results = controller.GetUnitsForVolume();
+            List<string> results = _controller.GetUnitsForVolume();
 
             //Assert
             Assert.IsNotNull(results);
@@ -29,8 +36,7 @@ namespace MandMCounter.Tests
             //Arrange
 
             //Act
-            UnitsController controller = new UnitsController();
-            List<string> results = controller.GetUnitsForContainer();
+            List<string> results = _controller.GetUnitsForContainer();
 
             //Assert
             Assert.IsNotNull(results);

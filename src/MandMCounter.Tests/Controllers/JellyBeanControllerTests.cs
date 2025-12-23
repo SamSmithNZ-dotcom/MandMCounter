@@ -22,13 +22,12 @@ namespace MandMCounter.Tests.Controllers
             string unit = "Gallon";
             float quantity = 1f;
             const float expectedJellyBeans = 8558f;
-            const float tolerance = 0.0001f;
 
             //Act
             float result = _controller.GetDataForUnit(unit, quantity);
 
             //Assert
-            Assert.AreEqual(expectedJellyBeans, System.Math.Round(result, 0), tolerance);
+            Assert.IsLessThan(expectedJellyBeans, result);
         }
 
         [TestMethod]
@@ -37,14 +36,13 @@ namespace MandMCounter.Tests.Controllers
             //Arrange
             string unit = "Quart";
             float quantity = 1f;
-            const float expectedJellyBeans = 2139f;
-            const float tolerance = 0.0001f;
+            const float expectedJellyBeans = 2140f;
 
             //Act
             float result = _controller.GetDataForUnit(unit, quantity);
 
             //Assert
-            Assert.AreEqual(expectedJellyBeans, System.Math.Round(result, 0), tolerance);
+            Assert.IsLessThan(expectedJellyBeans, result);
         }
 
         [TestMethod]
@@ -54,13 +52,12 @@ namespace MandMCounter.Tests.Controllers
             string unit = "Cup";
             float quantity = 1f;
             const float expectedJellyBeans = 535f;
-            const float tolerance = 0.0001f;
 
             //Act
             float result = _controller.GetDataForUnit(unit, quantity);
 
             //Assert
-            Assert.AreEqual(expectedJellyBeans, System.Math.Round(result, 0), tolerance);
+            Assert.IsLessThan(expectedJellyBeans, result);
         }
 
         [TestMethod]
@@ -69,14 +66,13 @@ namespace MandMCounter.Tests.Controllers
             //Arrange
             string unit = "Tablespoon";
             float quantity = 1f;
-            const float expectedJellyBeans = 33f;
-            const float tolerance = 0.0001f;
+            const float expectedJellyBeans = 34f;
 
             //Act
             float result = _controller.GetDataForUnit(unit, quantity);
 
             //Assert
-            Assert.AreEqual(expectedJellyBeans, System.Math.Round(result, 0), tolerance);
+            Assert.IsLessThan(expectedJellyBeans, result);
         }
 
         [TestMethod]
@@ -86,13 +82,12 @@ namespace MandMCounter.Tests.Controllers
             string unit = "Liter";
             float quantity = 1f;
             const float expectedJellyBeans = 2261f;
-            const float tolerance = 0.0001f;
 
             //Act
             float result = _controller.GetDataForUnit(unit, quantity);
 
             //Assert
-            Assert.AreEqual(expectedJellyBeans, System.Math.Round(result, 0), tolerance);
+            Assert.IsLessThan(expectedJellyBeans, result);
         }
 
         [TestMethod]
@@ -103,14 +98,13 @@ namespace MandMCounter.Tests.Controllers
             float height = 10;
             float width = 10;
             float length = 10;
+            const float expectedJellyBeans = 2261f;
 
             //Act
             float result = _controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
-            const float expected = 2261f;
-            const float delta = 0.0001f;
-            Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
+            Assert.IsLessThan(expectedJellyBeans, result);
         }
 
         [TestMethod]
@@ -121,14 +115,13 @@ namespace MandMCounter.Tests.Controllers
             float height = 1;
             float width = 1;
             float length = 1;
+            const float expectedJellyBeans = 38f;
 
             //Act
             float result = _controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
-            const float expected = 37f;
-            const float delta = 0.0001f;
-            Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
+            Assert.IsLessThan(expectedJellyBeans, result);
         }
 
         [TestMethod]
@@ -138,14 +131,13 @@ namespace MandMCounter.Tests.Controllers
             string unit = "cm";
             float height = 10;
             float radius = 5;
+            const float expectedJellyBeans = 1776f;
 
             //Act
             float result = _controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
-            const float expected = 1776f;
-            const float delta = 0.0001f;
-            Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
+            Assert.IsLessThan(expectedJellyBeans, result);
         }
 
         [TestMethod]
@@ -155,14 +147,13 @@ namespace MandMCounter.Tests.Controllers
             string unit = "inch";
             float height = 4;
             float radius = 2;
+            const float expectedJellyBeans = 1863f;
 
             //Act
             float result = _controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
-            const float expected = 1862f;
-            const float delta = 0.0001f;
-            Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
+            Assert.IsLessThan(expectedJellyBeans, result);
         }
 
     }

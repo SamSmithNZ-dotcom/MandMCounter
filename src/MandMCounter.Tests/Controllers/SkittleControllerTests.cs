@@ -1,6 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MandMCounter.Service.Controllers;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MandMCounter.Tests.Controllers
 {
@@ -9,6 +8,7 @@ namespace MandMCounter.Tests.Controllers
     public class SkittleControllerTests
     {
         private SkittleCounterController _controller;
+        private const float _tolerance = 0.0001f;
 
         [TestInitialize]
         public void Setup()
@@ -23,14 +23,13 @@ namespace MandMCounter.Tests.Controllers
             string unit = "Cup";
             float quantity = 1f;
             const float expectedSkittles = 212f;
-            const float tolerance = 0.0001f;
 
             //Act
             //SkittleCounterController controller = new SkittleCounterController();
             float result = _controller.GetDataForUnit(unit, quantity);
 
             //Assert
-            Assert.AreEqual(expectedSkittles, System.Math.Round(result, 0), tolerance);
+            Assert.AreEqual(expectedSkittles, System.Math.Round(result, 0), _tolerance);
         }
 
         [TestMethod]
@@ -48,8 +47,7 @@ namespace MandMCounter.Tests.Controllers
 
             //Assert
             const float expected = 896f;
-            const float delta = 0.0001f;
-            Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
+            Assert.AreEqual(expected, System.Math.Round(result, 0), _tolerance);
         }
 
         [TestMethod]
@@ -66,8 +64,7 @@ namespace MandMCounter.Tests.Controllers
 
             //Assert
             const float expected = 704f;
-            const float delta = 0.0001f;
-            Assert.AreEqual(expected, System.Math.Round(result, 0), delta);
+            Assert.AreEqual(expected, System.Math.Round(result, 0), _tolerance);
         }
 
     }

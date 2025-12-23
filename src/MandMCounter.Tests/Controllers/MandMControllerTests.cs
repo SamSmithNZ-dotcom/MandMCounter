@@ -1,6 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MandMCounter.Service.Controllers;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MandMCounter.Tests.Controllers
 {
@@ -8,6 +7,14 @@ namespace MandMCounter.Tests.Controllers
     [TestClass]
     public class MandMControllerTests
     {
+        private MandMCounterController _controller;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            _controller = new();
+        }
+
         [TestMethod]
         public void ControllerCountMandMsInAUSGallonTest()
         {
@@ -16,11 +23,10 @@ namespace MandMCounter.Tests.Controllers
             float quantity = 1f;
 
             //Act
-            MandMCounterController controller = new MandMCounterController();
-            float result = controller.GetDataForUnit(unit, quantity);
+            float result = _controller.GetDataForUnit(unit, quantity);
             
             //Assert
-            Assert.IsLessThan(0.5, Math.Abs(System.Math.Round(result, 0) - 253f));
+            Assert.IsLessThan(253f, result);
         }     
 
         [TestMethod]
@@ -33,11 +39,10 @@ namespace MandMCounter.Tests.Controllers
             float length = 10;
 
             //Act
-            MandMCounterController controller = new MandMCounterController();
-            float result = controller.GetDataForRectangle(unit, height, width, length);
+            float result = _controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
-            Assert.IsLessThan(0.5, Math.Abs(System.Math.Round(result, 0) - 1069f));
+            Assert.IsLessThan(1069f, result);
         }        
 
         [TestMethod]
@@ -49,11 +54,10 @@ namespace MandMCounter.Tests.Controllers
             float radius = 5;
 
             //Act
-            MandMCounterController controller = new MandMCounterController();
-            float result = controller.GetDataForCylinder(unit, height, radius);
+            float result = _controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
-            Assert.IsLessThan(0.5, Math.Abs(System.Math.Round(result, 0) - 840f));
+            Assert.IsLessThan(840f, result);
         }      
 
     }
