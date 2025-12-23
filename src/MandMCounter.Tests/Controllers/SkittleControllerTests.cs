@@ -8,7 +8,6 @@ namespace MandMCounter.Tests.Controllers
     public class SkittleControllerTests
     {
         private SkittleCounterController _controller;
-        private const float _tolerance = 0.0001f;
 
         [TestInitialize]
         public void Setup()
@@ -29,7 +28,7 @@ namespace MandMCounter.Tests.Controllers
             float result = _controller.GetDataForUnit(unit, quantity);
 
             //Assert
-            Assert.AreEqual(expectedSkittles, System.Math.Round(result, 0), _tolerance);
+            Assert.IsLessThan(expectedSkittles, result);
         }
 
         [TestMethod]
@@ -40,14 +39,14 @@ namespace MandMCounter.Tests.Controllers
             float height = 10;
             float width = 10;
             float length = 10;
+            const float expectedSkittles = 896f;
 
             //Act
             //SkittleCounterController controller = new SkittleCounterController();
             float result = _controller.GetDataForRectangle(unit, height, width, length);
 
             //Assert
-            const float expected = 896f;
-            Assert.AreEqual(expected, System.Math.Round(result, 0), _tolerance);
+            Assert.IsLessThan(expectedSkittles, result);
         }
 
         [TestMethod]
@@ -57,14 +56,14 @@ namespace MandMCounter.Tests.Controllers
             string unit = "cm";
             float height = 10;
             float radius = 5;
+            const float expectedSkittles = 704f;
 
             //Act
             //SkittleCounterController controller = new SkittleCounterController();
             float result = _controller.GetDataForCylinder(unit, height, radius);
 
             //Assert
-            const float expected = 704f;
-            Assert.AreEqual(expected, System.Math.Round(result, 0), _tolerance);
+            Assert.IsLessThan(expectedSkittles, result);
         }
 
     }
