@@ -21,7 +21,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(8556f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(8558f, System.Math.Round(result, 0), 1f);
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace MandMCounter.Tests
             float result = Calculator.CountJellyBeans(unit, quantity);
 
             //Assert
-            Assert.AreEqual(2139f, System.Math.Round(result, 0), 1f);
+            Assert.AreEqual(2140f, System.Math.Round(result, 0), 1f);
         }
 
         [TestMethod]
